@@ -1,6 +1,6 @@
-#ifndef APP_H_INCLUDED
-#define APP_H_INCLUDED
+#pragma once
 #include "menu.h"
+#include "menuAlumno.h"
 
 
 class App: public Menu {
@@ -10,7 +10,7 @@ public:
   void ejecutarOpcion (int opcion) override;
 
 private:
-  Menu _menu;
+  MenuAlumno _menuAlumno;
 
 };
 

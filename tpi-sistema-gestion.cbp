@@ -32,11 +32,19 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="alumno.cpp" />
+		<Unit filename="alumno.h" />
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
+		<Unit filename="archivoAlumno.cpp" />
+		<Unit filename="archivoAlumno.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="managerAlumno.cpp" />
+		<Unit filename="managerAlumno.h" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
+		<Unit filename="menuAlumno.cpp" />
+		<Unit filename="menuAlumno.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

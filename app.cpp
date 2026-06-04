@@ -1,10 +1,9 @@
 #include <iostream>
 #include "app.h"
-
 using namespace std;
 
 App::App();{
-setCantidadOpciones (1);
+int setCantidadOpciones (1);
 
 }
 void App::mostrarOpciones(){

@@ -3,8 +3,10 @@
 using namespace std;
 
 int main()
-App App;
-{   app.ejecutar();
+
+{ App App;
+App.ejecutar();
+
 
 
     return 0;
