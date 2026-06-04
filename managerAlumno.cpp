@@ -1,29 +1,29 @@
 #include <iostream>
 #include "alumno.h"
 #include "managerAlumno.h"
-#include "utils.h"
 using namespace std;
 
 AlumnoManager::AlumnoManager()
-   : _repoAlumno(){
+   : _alumnoArchivo(){
 
 }
 
 Alumno AlumnoManager::crearAlumno(){
-   int id = _repoAlumno.getNuevoLegajo();
-   string legajo;
+   int legajo = _alumnoArchivo.getNuevoLegajo();
+   string nombre;
 
    cout << "Legajo: #" << legajo << endl;
    cout << "Ingrese nombre: ";
-   nombre = cargarNombre();
-   cout
+   cin.ignore();                 // limpia el \n que pueda haber quedado
+   getline(cin, nombre);         // lee toda la línea (con espacios)
+
 
    return Alumno(legajo, nombre, 1); /// objeto anonimo
 }
 
 void AlumnoManager::guardarAlumno(){
    Alumno reg = crearAlumno();
-   if(_repoAlumno.guardar(reg)){
+   if(_alumnoArchivo.guardar(reg)){
       cout << "Se guardo exitosamente" << endl;
    }
    else{
@@ -31,18 +31,17 @@ void AlumnoManager::guardarAlumno(){
    }
 }
 
-void AlumnoManager::listarAlumno(){
-   int cantidad = _repoAlumno.getCantidadRegistros();
+void AlumnoManager::listarAlumnos(){
+   int cantidad = _alumnoArchivo.getCantidadRegistros();
 
    for(int i=0; i<cantidad; i++){
-      Alumno a = _repoAlumno.leer(i);
+      Alumno a = _alumnoArchivo.leer(i);
       cout << "-----------------------"<<endl;
       cout << "Legajo #" << a.getLegajo() << endl;
-      cout << "Nombre " << a.getNombre()  << endl;
-      cout << "Apellido " << a.getApellido()  << endl;
-      cout << "Fecha de nacimiento: " <<
-            t.getFechaCreacion().getDia()
-            << "/" << t.getFechaCreacion().getMes()
-            << "/" << t.getFechaCreacion().getAnio() << endl;
+      cout << "Nombre: " << a.getNombre() << endl;
+      cout << "Fecha de nacimiento: "
+           << a.getFechaNacimiento().getDia() << "/"
+           << a.getFechaNacimiento().getMes() << "/"
+           << a.getFechaNacimiento().getAnio() << endl;
    }
 }

@@ -17,7 +17,7 @@ Alumno::Alumno(int legajo, std::string nombre, int estado, Fecha nacimiento){
 
 Alumno::Alumno(int legajo, std::string nombre, int estado){
    Fecha nacimiento;
-   nacimiento.cargarFecha();///agregar cargar Fecha
+   nacimiento.setCurrentDate();///agregar cargar Fecha
 
    setLegajo(legajo);
    setNombre(nombre);
@@ -30,7 +30,7 @@ int Alumno::getLegajo() const{
 }
 
 void Alumno::setLegajo(int id){
-   _id = legajo;
+   _legajo = id;
 }
 
 std::string Alumno::getNombre() const{
@@ -56,26 +56,10 @@ void Alumno::setEstado(int estado){
    _estado = estado;
 }
 
-Fecha Alumno::getFechaCreacion() const{
-   return _fechaCreacion;
+Fecha Alumno::getFechaNacimiento() const {
+   return _fechaNacimiento;
 }
 
-void Tarea::setFechaCreacion(Fecha fechaCreacion){
-   _fechaCreacion = fechaCreacion;
-}
-
-Fecha Tarea::getFechaInicio() const{
-   return _fechaInicio;
-}
-
-void Tarea::setFechaInicio(Fecha fechaInicio){
-   _fechaInicio = fechaInicio;
-}
-
-Fecha Tarea::getFechaCompletado() const{
-   return _fechaCompletado;
-}
-
-void Tarea::setFechaCompletado(Fecha fechaCompletado){
-   _fechaCompletado = fechaCompletado;
+void Alumno::setFechaNacimiento(Fecha fechaNacimiento) {
+   _fechaNacimiento = fechaNacimiento;
 }

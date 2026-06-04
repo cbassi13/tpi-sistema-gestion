@@ -10,9 +10,6 @@ public:
   void ejecutarOpcion (int opcion) override;
 
 private:
-  MenuAlumno _menuAlumno;
+  AlumnoMenu _menuAlumno;
 
 };
-
-
-#endif // APP_H_INCLUDED

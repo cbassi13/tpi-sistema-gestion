@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1780592989 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\menu.cpp
+	<iostream>
+	"menuAlumno.h"
+	<cstdio>
+
+1780592989 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\menualumno.h
+	"managerAlumno.h"
+	"menu.h"
+
+1780604846 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\manageralumno.h
+	"archivoAlumno.h"
+
+1780592989 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\archivoalumno.h
+	<string>
+	"alumno.h"
+
+1780592989 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\alumno.h
+	<string>
+	"fecha.h"
+
+1780592989 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\menu.h
+
+1780603250 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\fecha.h
+
+1780595511 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\archivoalumno.cpp
+	"archivoAlumno.h"
+
+1780603230 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\fecha.cpp
+	<chrono>
+	"fecha.h"
+
+1780603630 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\alumno.cpp
+	<cstring>
+	"alumno.h"
+
+1780603507 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\app.cpp
+	<iostream>
+	"app.h"
+
+1780603493 c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\app.h
+	"menu.h"
+	"menuAlumno.h"
+
+1780604114 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\main.cpp
+	<iostream>
+	"app.h"
+
+1780604748 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\manageralumno.cpp
+	<iostream>
+	"alumno.h"
+	"managerAlumno.h"
+
+1780592989 source:c:\users\david\desktop\utn\programacion-2\tpi\tpi-sistema-gestion\menualumno.cpp
+	<iostream>
+	"menuAlumno.h"
+	<cstdio>
+

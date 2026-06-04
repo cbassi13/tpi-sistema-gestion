@@ -24,7 +24,7 @@ bool AlumnoArchivo::guardar(const Alumno &reg){
 
 Alumno AlumnoArchivo::leer(int pos){
    FILE *pFile;
-   Tarea reg;
+   Alumno reg;
 
    reg.setLegajo(-1);
 

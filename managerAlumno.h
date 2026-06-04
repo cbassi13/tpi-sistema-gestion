@@ -6,10 +6,10 @@ public:
 	AlumnoManager();
 
    void guardarAlumno();
-   void listarAlumno();
+   void listarAlumnos();
 
 private:
-   AlumnoMenu crearAlumno();
+   Alumno crearAlumno();
    AlumnoArchivo _alumnoArchivo;
 };
 
