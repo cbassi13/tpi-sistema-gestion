@@ -10,8 +10,7 @@ public:
    int getCantidadRegistros();
    int getNuevoLegajo();
 
-   int getPosByLegajo(int legajo); /// Pendiente en otra clase más adelante
-
+  /// int getPosByLegajo(int legajo);
 private:
    std::string _nombreArchivo;
 };
