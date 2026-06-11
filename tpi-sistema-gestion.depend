@@ -60,7 +60,7 @@
 	<cstring>
 	"alumno.h"
 
-1780536942 c:\programación\tpi sist gestion\alumno.h
+1781138279 c:\programación\tpi sist gestion\alumno.h
 	<string>
 	"fecha.h"
 
@@ -112,4 +112,12 @@
 	<iostream>
 	"menuAlumno.h"
 	<cstdio>
+
+1781050894 source:c:\programación\tpi sist gestion\persona.cpp
+	<iostream>
+	<cstring>
+	"persona.h"
+
+1781050894 c:\programación\tpi sist gestion\persona.h
+	"Fecha.h"
 

@@ -38,6 +38,8 @@
 		<Unit filename="app.h" />
 		<Unit filename="archivoAlumno.cpp" />
 		<Unit filename="archivoAlumno.h" />
+		<Unit filename="aula.cpp" />
+		<Unit filename="aula.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
