@@ -5,9 +5,7 @@
 using namespace std;
 
 
-Persona::Persona():
-_dni(0), _email(""), _nombre(""), _apellido(""), _telefono(""), _direccion(""), _eliminado(0),
-   _fechaNacimiento(){}
+Persona::Persona():_eliminado(false)(){}
 
 
 void Persona::setDni(int dni)
