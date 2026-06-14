@@ -5,7 +5,7 @@
 using namespace std;
 
 
-Persona::Persona():_eliminado(false)(){}
+Persona::Persona(): _eliminado(false){}
 
 
 void Persona::setDni(int dni)
