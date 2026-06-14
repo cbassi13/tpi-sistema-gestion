@@ -18,7 +18,7 @@ Alumno AlumnoManager::crearAlumno(){
    getline(cin, nombre);         // lee toda la línea (con espacios)
 
 
-   return Alumno(legajo, nombre, 1); /// objeto anonimo
+   return Alumno(legajo, nombre, Fecha()); /// objeto anonimo
 }
 
 void AlumnoManager::guardarAlumno(){
