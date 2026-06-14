@@ -1,36 +1,37 @@
 #pragma once
+#include <string>
 #include "fecha.h"
 
 class Persona
 {
 public:
     Persona();
-    Persona(int dni, const char* nombre, const char* apellido, const char* email,
-        const char* telefono, const char* direccion, Fecha fechaNacimiento);
+    Persona(int dni, std::string nombre, std::string apellido, std::string email,
+        std::string telefono, std::string direccion, Fecha fechaNacimiento);
 
     void setDni(int dni);
-    int getDni();
+    int getDni() const;
 
-    void setEmail(const char* email);
-    const char* getEmail();
+    void setNombre(std::string nombre);
+    std::string getNombre() const;
 
-    void setNombre(const char* nombre);
-    const char* getNombre();
+    void setApellido(std::string apellido);
+    std::string getApellido() const;
 
-    void setApellido(const char* apellido);
-    const char* getApellido();
+    void setEmail(std::string email);
+    std::string getEmail() const;
 
-    void setTelefono(const char* telefono);
-    const char* getTelefono();
+    void setTelefono(std::string telefono);
+    std::string getTelefono() const;
 
-    void setDireccion(const char* direccion);
-    const char* getDireccion();
+    void setDireccion(std::string direccion);
+    std::string getDireccion() const;
 
     void setFechaNacimiento(Fecha fechaNacimiento);
-    Fecha getFechaNacimiento();
+    Fecha getFechaNacimiento() const;
 
     void setEliminado(bool eliminado);
-    bool getEliminado();
+    bool getEliminado() const;
 
 private:
     int _dni;
