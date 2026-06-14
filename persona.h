@@ -26,7 +26,7 @@ public:
     void setDireccion(const char* direccion);
     const char* getDireccion();
 
-    void setFechaNacimiento(Fecha);
+    void setFechaNacimiento(Fecha fechaNacimiento);
     Fecha getFechaNacimiento();
 
     void setEliminado(bool eliminado);
