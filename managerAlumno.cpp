@@ -1,6 +1,7 @@
 #include <iostream>
 #include "alumno.h"
 #include "managerAlumno.h"
+
 using namespace std;
 
 AlumnoManager::AlumnoManager()
@@ -10,15 +11,41 @@ AlumnoManager::AlumnoManager()
 
 Alumno AlumnoManager::crearAlumno(){
    int legajo = _alumnoArchivo.getNuevoLegajo();
-   string nombre;
+   string nombre, apellido, email, direccion, telefono;
+   int dni, dia, mes, anio;
 
    cout << "Legajo: #" << legajo << endl;
    cout << "Ingrese nombre: ";
-   cin.ignore();                 // limpia el \n que pueda haber quedado
-   getline(cin, nombre);         // lee toda la línea (con espacios)
+   cin.ignore();                 /// limpia el \n que pueda haber quedado
+   getline(cin, nombre);         /// lee toda la línea (con espacios)
+   cout << "Ingrese apellido: ";
+   cin.ignore();
+   getline(cin, apellido);
+   cout << "Ingrese DNI: ";
+   cin.ignore();
+   cin>> dni;
+   cout << "Ingrese email: ";
+   cin.ignore();
+   getline(cin, email);
+   cout << "Ingrese telefono: ";
+   cin.ignore();
+   getline(cin, telefono);
+   cout << "Ingrese direccion: ";
+   cin.ignore();
+   getline(cin, direccion);
+   cout << "Ingrese dia de nacimiento: ";
+   cin >> dia;
+   cin.ignore();
+   cout << "Ingrese mes de nacimiento: ";
+   cin >> mes;
+   cin.ignore();
+   cout << "Ingrese anio de nacimiento: ";
+   cin >> anio;
+   cin.ignore();
 
+   Fecha fechaNacimiento(dia, mes, anio);
 
-   return Alumno(legajo, nombre, Fecha()); /// objeto anonimo
+   return Alumno(legajo, dni, nombre, apellido, email, telefono, direccion, fechaNacimiento);
 }
 
 void AlumnoManager::guardarAlumno(){
