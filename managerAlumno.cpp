@@ -16,32 +16,33 @@ Alumno AlumnoManager::crearAlumno(){
 
    cout << "Legajo: #" << legajo << endl;
    cout << "Ingrese nombre: ";
-   cin.ignore();                 /// limpia el \n que pueda haber quedado
-   getline(cin, nombre);         /// lee toda la línea (con espacios)
+   cin.ignore();
+   getline(cin, nombre);
+
    cout << "Ingrese apellido: ";
-   cin.ignore();
    getline(cin, apellido);
+
    cout << "Ingrese DNI: ";
-   cin.ignore();
-   cin>> dni;
+   cin >> dni;
+
    cout << "Ingrese email: ";
    cin.ignore();
    getline(cin, email);
+
    cout << "Ingrese telefono: ";
-   cin.ignore();
    getline(cin, telefono);
+
    cout << "Ingrese direccion: ";
-   cin.ignore();
    getline(cin, direccion);
+
    cout << "Ingrese dia de nacimiento: ";
    cin >> dia;
-   cin.ignore();
+
    cout << "Ingrese mes de nacimiento: ";
    cin >> mes;
-   cin.ignore();
+
    cout << "Ingrese anio de nacimiento: ";
    cin >> anio;
-   cin.ignore();
 
    Fecha fechaNacimiento(dia, mes, anio);
 
