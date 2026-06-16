@@ -3,16 +3,9 @@
 
 Alumno::Alumno(): Persona(), _legajo(0) {}
 
-Alumno::Alumno(int legajo, int dni, std::string nombre, std::string apellido, std::string email,
-std::string telefono, std::string direccion, Fecha fechaNacimiento) {
+Alumno::Alumno(int legajo, int dni, std::string nombre, std::string apellido, std::string email, std::string telefono, std::string direccion, Fecha fechaNacimiento)
+: Persona(dni, nombre, apellido, email, telefono, direccion, fechaNacimiento) {
     setLegajo(legajo);
-    setDni(dni);
-    setNombre(nombre);
-    setApellido(apellido);
-    setEmail(email);
-    setTelefono(telefono);
-    setDireccion(direccion);
-    setFechaNacimiento(fechaNacimiento);
 }
 
 int Alumno::getLegajo() const {
