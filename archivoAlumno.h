@@ -5,7 +5,7 @@
 class AlumnoArchivo {
 public:
 	AlumnoArchivo(std::string nombreArchivo = "alumnos.dat");
-   bool guardar(Alumno &reg);
+   bool guardar(const Alumno &reg);
    Alumno leer(int pos);
    int getCantidadRegistros();
    int getNuevoLegajo();

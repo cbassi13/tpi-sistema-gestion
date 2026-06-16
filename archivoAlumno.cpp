@@ -5,7 +5,7 @@ AlumnoArchivo::AlumnoArchivo(std::string nombreArchivo)
 
 }
 
-bool AlumnoArchivo::guardar(Alumno &reg){
+bool AlumnoArchivo::guardar(const Alumno &reg){
    FILE *pFile;
    bool result;
 
