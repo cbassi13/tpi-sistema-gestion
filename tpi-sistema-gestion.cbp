@@ -38,17 +38,25 @@
 		<Unit filename="app.h" />
 		<Unit filename="archivoAlumno.cpp" />
 		<Unit filename="archivoAlumno.h" />
+		<Unit filename="archivoDocente.cpp" />
+		<Unit filename="archivoDocente.h" />
 		<Unit filename="aula.cpp" />
 		<Unit filename="aula.h" />
+		<Unit filename="docente.cpp" />
+		<Unit filename="docente.h" />
 		<Unit filename="fecha.cpp" />
 		<Unit filename="fecha.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="managerAlumno.cpp" />
 		<Unit filename="managerAlumno.h" />
+		<Unit filename="managerDocente.cpp" />
+		<Unit filename="managerDocente.h" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
 		<Unit filename="menuAlumno.cpp" />
 		<Unit filename="menuAlumno.h" />
+		<Unit filename="menuDocente.cpp" />
+		<Unit filename="menuDocente.h" />
 		<Unit filename="persona.cpp" />
 		<Unit filename="persona.h" />
 		<Extensions>
