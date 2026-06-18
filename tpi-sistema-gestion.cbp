@@ -5,6 +5,7 @@
 		<Option title="tpi-sistema-gestion" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
+		<Option virtualFolders="modulos/persona/;modulos/persona/alumno/;modulos/persona/docente/;modulos/;utils/;modulos/aula/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/tpi-sistema-gestion" prefix_auto="1" extension_auto="1" />
@@ -32,33 +33,77 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="alumno.cpp" />
-		<Unit filename="alumno.h" />
+		<Unit filename="alumno.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="alumno.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
-		<Unit filename="archivoAlumno.cpp" />
-		<Unit filename="archivoAlumno.h" />
-		<Unit filename="archivoDocente.cpp" />
-		<Unit filename="archivoDocente.h" />
-		<Unit filename="aula.cpp" />
-		<Unit filename="aula.h" />
-		<Unit filename="docente.cpp" />
-		<Unit filename="docente.h" />
-		<Unit filename="fecha.cpp" />
-		<Unit filename="fecha.h" />
+		<Unit filename="archivoAlumno.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="archivoAlumno.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="archivoDocente.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="archivoDocente.h">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="aula.cpp">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aula.h">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="docente.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="docente.h">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="fecha.cpp">
+			<Option virtualFolder="utils/" />
+		</Unit>
+		<Unit filename="fecha.h">
+			<Option virtualFolder="utils/" />
+		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="managerAlumno.cpp" />
-		<Unit filename="managerAlumno.h" />
-		<Unit filename="managerDocente.cpp" />
-		<Unit filename="managerDocente.h" />
+		<Unit filename="managerAlumno.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="managerAlumno.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="managerDocente.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="managerDocente.h">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
-		<Unit filename="menuAlumno.cpp" />
-		<Unit filename="menuAlumno.h" />
-		<Unit filename="menuDocente.cpp" />
-		<Unit filename="menuDocente.h" />
-		<Unit filename="persona.cpp" />
-		<Unit filename="persona.h" />
+		<Unit filename="menuAlumno.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="menuAlumno.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="menuDocente.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="menuDocente.h">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="persona.cpp">
+			<Option virtualFolder="modulos/persona/" />
+		</Unit>
+		<Unit filename="persona.h">
+			<Option virtualFolder="modulos/persona/" />
+		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
