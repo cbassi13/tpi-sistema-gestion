@@ -1,27 +1,30 @@
 #pragma once
+#include <string>
 
-class Aula
-{
+class Aula {
 public:
     Aula();
-    Aula(int _idAula, int _capacidad, bool _tieneProyector, bool _tieneEquiposInformaticos, bool _eliminado);
+    Aula(int idAula, int capacidad, bool proyector, bool equipos);
 
-    void setIdAula(int _idAula);
-    int getIdAula();
-    void setCapacidad(int _capacidad);
-    int getCapacidad();
-    void setTieneProyector(bool _tieneProyector);
-    bool getTieneProyector();
-    void setTieneEquiposInformaticos(bool _tieneEquiposInformaticos);
-    bool getTieneEquiposInformaticos();
-    void setEliminado(bool _eliminado);
-    bool getEliminado();
+    void setIdAula(int idAula);
+    int getIdAula() const;
+
+    void setCapacidad(int capacidad);
+    int getCapacidad() const;
+
+    void setProyector(bool proyector);
+    bool getProyector() const;
+
+    void setEquipos(bool equipos);
+    bool getEquipos() const;
+
+    void setEliminado(bool eliminado);
+    bool getEliminado() const;
 
 private:
     int _idAula;
     int _capacidad;
-    bool _tieneProyector;
-    bool _tieneEquiposInformaticos;
+    bool _proyector;
+    bool _equipos;
     bool _eliminado;
-
 };

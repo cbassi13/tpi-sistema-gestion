@@ -1,60 +1,65 @@
-#include <iostream>
 #include "aula.h"
 
-using namespace std;
-
-Aula::Aula() {
-    _idAula = 0;
-    _capacidad = 0;
-    _tieneProyector = false;
-    _tieneEquiposInformaticos = false;
-    _eliminado = false;
+Aula::Aula()
+    : _idAula(0), _capacidad(0), _proyector(false), _equipos(false), _eliminado(false)
+{
 }
 
-Aula::Aula(int _idAula, int _capacidad, bool _tieneProyector, bool _tieneEquiposInformaticos, bool _eliminado){
-///Crear aula???
+Aula::Aula(int idAula, int capacidad, bool proyector, bool equipos)
+    : _eliminado(false)
+{
+    setIdAula(idAula);
+    setCapacidad(capacidad);
+    setProyector(proyector);
+    setEquipos(equipos);
 }
 
-///Getters
-
-int Aula::getIdAula() {
-  return _idAula;
+void Aula::setIdAula(int idAula)
+{
+    _idAula = idAula;
 }
 
-int Aula::getCapacidad() {
-  return _capacidad;
+int Aula::getIdAula() const
+{
+    return _idAula;
 }
 
-bool Aula::getTieneEquiposInformaticos() {
-  return _tieneEquiposInformaticos;
+void Aula::setCapacidad(int capacidad)
+{
+    _capacidad = capacidad;
 }
 
-bool Aula::getTieneProyector() {
-  return _tieneProyector;
+int Aula::getCapacidad() const
+{
+    return _capacidad;
 }
 
-bool Aula::getEliminado()  {
-  return _eliminado;
+void Aula::setProyector(bool proyector)
+{
+    _proyector = proyector;
 }
 
-///Setters
-
-void Aula::setIdAula(int idAula) {
-  _idAula = idAula;
+bool Aula::getProyector() const
+{
+    return _proyector;
 }
 
-void Aula::setCapacidad(int capacidad) {
-  _capacidad = capacidad;
+void Aula::setEquipos(bool equipos)
+{
+    _equipos = equipos;
 }
 
-void Aula::setTieneEquiposInformaticos(bool tieneEquiposInformaticos) {
-  _tieneEquiposInformaticos = tieneEquiposInformaticos;
+bool Aula::getEquipos() const
+{
+    return _equipos;
 }
 
-void Aula::setTieneProyector(bool tieneProyector) {
-  _tieneProyector = tieneProyector;
+void Aula::setEliminado(bool eliminado)
+{
+    _eliminado = eliminado;
 }
 
-void Aula::setEliminado(bool eliminado) {
-  _eliminado = eliminado;
+bool Aula::getEliminado() const
+{
+    return _eliminado;
 }

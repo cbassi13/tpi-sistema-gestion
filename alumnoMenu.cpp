@@ -18,16 +18,16 @@ void AlumnoMenu::mostrarOpciones(){ /// << este no....
 void AlumnoMenu::ejecutarOpcion(int opcion){ /// particular
    switch(opcion){
    case 1:
-      _managerAlumno.guardarAlumno();
+      _alumnoManager.guardarAlumno();
       break;
    case 2:
-      /// _managerAlumno.modificarAlumno();
+      /// _alumnoManager.modificarAlumno();
       break;
    case 3:
-      /// _managerAlumno.bajaAlumno();
+      /// _alumnoManager.bajaAlumno();
       break;
    case 4:
-      _managerAlumno.listarAlumnos();
+      _alumnoManager.listarAlumnos();
       break;
    case 0:
       cout << "Saliendo del menu!"<<endl;

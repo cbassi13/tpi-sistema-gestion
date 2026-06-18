@@ -20,16 +20,16 @@ void DocenteMenu::mostrarOpciones() {
 void DocenteMenu::ejecutarOpcion(int opcion) {
     switch(opcion) {
     case 1:
-        _managerDocente.guardarDocente();
+        _docenteManager.guardarDocente();
         break;
     case 2:
-        /// _managerDocente.modificarDocente();
+        /// _docenteManager.modificarDocente();
         break;
     case 3:
-        /// _managerDocente.bajaDocente();
+        /// _docenteManager.bajaDocente();
         break;
     case 4:
-        _managerDocente.listarDocentes();
+        _docenteManager.listarDocentes();
         break;
     case 0:
         cout << "Saliendo del menu!" << endl;
