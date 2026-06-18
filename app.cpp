@@ -17,6 +17,7 @@ void App::ejecutarOpcion(int opcion){
    switch(opcion){
    case 1:
       _menuAlumno.run();
+      break;
    case 2:
       _menuDocente.run();
       break;
