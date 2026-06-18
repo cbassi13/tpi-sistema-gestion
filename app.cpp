@@ -3,7 +3,7 @@
 using namespace std;
 
 App::App(){
-    setCantidadOpciones(2);
+
 }
 
 void App::mostrarOpciones(){
@@ -14,14 +14,17 @@ void App::mostrarOpciones(){
    cout << "------------------------"<<endl;
 }
 void App::ejecutarOpcion(int opcion){
-   switch(opcion){
-   case 1:
-      _menuAlumno.run();
-      break;
-   case 2:
-      _menuDocente.run();
-      break;
-   case 0:
-      cout << "Gracias por usar mi app :)" << endl;
-   }
+    switch(opcion){
+        case 1:
+            _menuAlumno.run();
+            break;
+        case 2:
+            _menuDocente.run();
+            break;
+        case 0:
+            cout << "Gracias por usar mi app :)" << endl;
+            break;
+        default:
+            cout << "Opcion incorrecta" << endl;
+    }
 }

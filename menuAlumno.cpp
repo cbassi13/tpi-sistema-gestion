@@ -5,7 +5,6 @@
 using namespace std;
 
 AlumnoMenu::AlumnoMenu(){
-   setCantidadOpciones(4);
 }
 
 void AlumnoMenu::mostrarOpciones(){ /// << este no....
@@ -33,5 +32,7 @@ void AlumnoMenu::ejecutarOpcion(int opcion){ /// particular
    case 0:
       cout << "Saliendo del menu!"<<endl;
       break;
+   default:
+      cout << "Opcion incorrecta" << endl;
    }
 }

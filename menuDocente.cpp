@@ -5,7 +5,6 @@
 using namespace std;
 
 DocenteMenu::DocenteMenu() {
-    setCantidadOpciones(4);
 }
 
 void DocenteMenu::mostrarOpciones() {
@@ -35,5 +34,7 @@ void DocenteMenu::ejecutarOpcion(int opcion) {
     case 0:
         cout << "Saliendo del menu!" << endl;
         break;
+     default:
+        cout << "Opcion incorrecta" << endl;
     }
 }

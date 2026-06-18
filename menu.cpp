@@ -4,40 +4,22 @@
 
 using namespace std;
 
-Menu::Menu(){
-   setCantidadOpciones(0);
-}
-void Menu::run(){
-   int opcion;
+Menu::Menu(){}
 
-   do{
+void Menu::run(){
+
+   int opcion;
+   while(true){
       system("cls");
       mostrarOpciones();
-      opcion = seleccionarOpcion();
-      ejecutarOpcion(opcion);
-      system("pause");
-   }while(opcion != 0);
-}
-
-int Menu::seleccionarOpcion(){
-   int opcion;
-
-   do{
       cout << "Ingrese opcion: ";
       cin >> opcion;
 
-      if(opcion < 0 || opcion > getCantidadOpciones()){
-         cout << " > Opcion no correcta..." << endl;
+      if(opcion == 0){
+         return;
       }
-   } while(opcion < 0 || opcion > getCantidadOpciones());
 
-   return opcion;
+      ejecutarOpcion(opcion);
+      system("pause");
+   }
 }
-
-void Menu::setCantidadOpciones(int cantidad){
-   _cantidadOpciones = cantidad;
-}
-int Menu::getCantidadOpciones(){
-   return _cantidadOpciones;
-}
-
