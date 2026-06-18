@@ -1,7 +1,7 @@
 #pragma once
 #include "menu.h"
-#include "menuAlumno.h"
-#include "menuDocente.h"
+#include "alumnoMenu.h"
+#include "docenteMenu.h"
 
 
 class App: public Menu {
@@ -11,7 +11,7 @@ public:
   void ejecutarOpcion (int opcion) override;
 
 private:
-  AlumnoMenu _menuAlumno;
-  DocenteMenu _menuDocente;
+  AlumnoMenu _alumnoMenu;
+  DocenteMenu _docenteMenu;
 
 };

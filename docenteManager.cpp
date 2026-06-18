@@ -1,6 +1,6 @@
 #include <iostream>
 #include "docente.h"
-#include "managerDocente.h"
+#include "docenteManager.h"
 
 using namespace std;
 

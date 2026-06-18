@@ -1,4 +1,4 @@
-#include "archivoDocente.h"
+#include "docenteArchivo.h"
 
 DocenteArchivo::DocenteArchivo(std::string nombreArchivo)
     : _nombreArchivo(nombreArchivo) {

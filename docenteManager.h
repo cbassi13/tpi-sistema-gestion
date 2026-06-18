@@ -1,5 +1,5 @@
 #pragma once
-#include "archivoDocente.h"
+#include "docenteArchivo.h"
 
 class DocenteManager {
 public:

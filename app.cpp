@@ -16,10 +16,10 @@ void App::mostrarOpciones(){
 void App::ejecutarOpcion(int opcion){
     switch(opcion){
         case 1:
-            _menuAlumno.run();
+            _alumnoMenu.run();
             break;
         case 2:
-            _menuDocente.run();
+            _docenteMenu.run();
             break;
         case 0:
             cout << "Gracias por usar mi app :)" << endl;

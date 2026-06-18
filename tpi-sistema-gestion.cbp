@@ -41,16 +41,16 @@
 		</Unit>
 		<Unit filename="app.cpp" />
 		<Unit filename="app.h" />
-		<Unit filename="archivoAlumno.cpp">
+		<Unit filename="alumnoArchivo.cpp">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="archivoAlumno.h">
+		<Unit filename="alumnoArchivo.h">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="archivoDocente.cpp">
+		<Unit filename="docenteArchivo.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
-		<Unit filename="archivoDocente.h">
+		<Unit filename="docenteArchivo.h">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
 		<Unit filename="aula.cpp">
@@ -72,30 +72,30 @@
 			<Option virtualFolder="utils/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="managerAlumno.cpp">
+		<Unit filename="alumnoManager.cpp">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="managerAlumno.h">
+		<Unit filename="alumnoManager.h">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="managerDocente.cpp">
+		<Unit filename="docenteManager.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
-		<Unit filename="managerDocente.h">
+		<Unit filename="docenteManager.h">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
-		<Unit filename="menuAlumno.cpp">
+		<Unit filename="alumnoMenu.cpp">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="menuAlumno.h">
+		<Unit filename="alumnoMenu.h">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="menuDocente.cpp">
+		<Unit filename="docenteMenu.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
-		<Unit filename="menuDocente.h">
+		<Unit filename="docenteMenu.h">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
 		<Unit filename="persona.cpp">
