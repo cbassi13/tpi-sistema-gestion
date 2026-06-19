@@ -23,7 +23,7 @@ void App::ejecutarOpcion(int opcion){
             _docenteMenu.run();
             break;
         case 3:
-            _menuAula.run();
+            _aulaMenu.run();
             break;
         case 0:
             cout << "Gracias por usar mi app :)" << endl;

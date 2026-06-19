@@ -13,5 +13,5 @@ public:
 private:
     AlumnoMenu _alumnoMenu;
     DocenteMenu _docenteMenu;
-    AulaMenu _menuAula;
+    AulaMenu _aulaMenu;
 };

@@ -39,13 +39,55 @@
 		<Unit filename="alumno.h">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
-		<Unit filename="app.cpp" />
-		<Unit filename="app.h" />
 		<Unit filename="alumnoArchivo.cpp">
 			<Option virtualFolder="modulos/persona/alumno/" />
 		</Unit>
 		<Unit filename="alumnoArchivo.h">
 			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="alumnoManager.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="alumnoManager.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="alumnoMenu.cpp">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="alumnoMenu.h">
+			<Option virtualFolder="modulos/persona/alumno/" />
+		</Unit>
+		<Unit filename="app.cpp" />
+		<Unit filename="app.h" />
+		<Unit filename="aula.cpp">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aula.h">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaArchivo.cpp">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaArchivo.h">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaManager.cpp">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaManager.h">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaMenu.cpp">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="aulaMenu.h">
+			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="docente.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="docente.h">
+			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
 		<Unit filename="docenteArchivo.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
@@ -53,16 +95,16 @@
 		<Unit filename="docenteArchivo.h">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
-		<Unit filename="aula.cpp">
-			<Option virtualFolder="modulos/aula/" />
-		</Unit>
-		<Unit filename="aula.h">
-			<Option virtualFolder="modulos/aula/" />
-		</Unit>
-		<Unit filename="docente.cpp">
+		<Unit filename="docenteManager.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
-		<Unit filename="docente.h">
+		<Unit filename="docenteManager.h">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="docenteMenu.cpp">
+			<Option virtualFolder="modulos/persona/docente/" />
+		</Unit>
+		<Unit filename="docenteMenu.h">
 			<Option virtualFolder="modulos/persona/docente/" />
 		</Unit>
 		<Unit filename="fecha.cpp">
@@ -72,32 +114,8 @@
 			<Option virtualFolder="utils/" />
 		</Unit>
 		<Unit filename="main.cpp" />
-		<Unit filename="alumnoManager.cpp">
-			<Option virtualFolder="modulos/persona/alumno/" />
-		</Unit>
-		<Unit filename="alumnoManager.h">
-			<Option virtualFolder="modulos/persona/alumno/" />
-		</Unit>
-		<Unit filename="docenteManager.cpp">
-			<Option virtualFolder="modulos/persona/docente/" />
-		</Unit>
-		<Unit filename="docenteManager.h">
-			<Option virtualFolder="modulos/persona/docente/" />
-		</Unit>
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
-		<Unit filename="alumnoMenu.cpp">
-			<Option virtualFolder="modulos/persona/alumno/" />
-		</Unit>
-		<Unit filename="alumnoMenu.h">
-			<Option virtualFolder="modulos/persona/alumno/" />
-		</Unit>
-		<Unit filename="docenteMenu.cpp">
-			<Option virtualFolder="modulos/persona/docente/" />
-		</Unit>
-		<Unit filename="docenteMenu.h">
-			<Option virtualFolder="modulos/persona/docente/" />
-		</Unit>
 		<Unit filename="persona.cpp">
 			<Option virtualFolder="modulos/persona/" />
 		</Unit>
