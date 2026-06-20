@@ -1,4 +1,4 @@
-#include "inscripcion.h"
+#include "inscripciones.h"
 
 Inscripcion::Inscripcion() {
     _idInscripcion = 0;

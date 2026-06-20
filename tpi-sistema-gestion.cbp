@@ -149,6 +149,18 @@
 		<Unit filename="inscripcionesArchivo.h">
 			<Option virtualFolder="modulos/inscripciones/" />
 		</Unit>
+		<Unit filename="inscripcionesManager.cpp">
+			<Option virtualFolder="modulos/inscripciones/" />
+		</Unit>
+		<Unit filename="inscripcionesManager.h">
+			<Option virtualFolder="modulos/inscripciones/" />
+		</Unit>
+		<Unit filename="inscripcionesMenu.cpp">
+			<Option virtualFolder="modulos/inscripciones/" />
+		</Unit>
+		<Unit filename="inscripcionesMenu.h">
+			<Option virtualFolder="modulos/inscripciones/" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
