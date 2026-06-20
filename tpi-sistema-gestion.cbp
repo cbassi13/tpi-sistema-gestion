@@ -5,7 +5,7 @@
 		<Option title="tpi-sistema-gestion" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="modulos/persona/;modulos/persona/alumno/;modulos/persona/docente/;modulos/;utils/;modulos/aula/" />
+		<Option virtualFolders="modulos/persona/;modulos/persona/alumno/;modulos/persona/docente/;modulos/;utils/;modulos/aula/;modulos/beca/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/tpi-sistema-gestion" prefix_auto="1" extension_auto="1" />
@@ -82,6 +82,30 @@
 		</Unit>
 		<Unit filename="aulaMenu.h">
 			<Option virtualFolder="modulos/aula/" />
+		</Unit>
+		<Unit filename="beca.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="beca.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaArchivo.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaArchivo.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaManager.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaManager.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaMenu.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaMenu.h">
+			<Option virtualFolder="modulos/beca/" />
 		</Unit>
 		<Unit filename="docente.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
