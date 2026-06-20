@@ -65,3 +65,39 @@ int CarreraArchivo::getCantidadRegistros() {
 int CarreraArchivo::getNuevoIdCarrera() {
     return getCantidadRegistros() + 1;
 }
+
+int CarreraArchivo::getPosByIdCarrera(int idCarrera){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Carrera reg = leer(i);
+
+        if(reg.getIdCarrera() == idCarrera){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+bool CarreraArchivo::modificar(const Carrera &reg, int pos){
+
+    FILE *pFile;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(pFile == nullptr){
+        return false;
+    }
+
+    fseek(pFile, pos * sizeof(Carrera), SEEK_SET);
+
+    bool resultado = fwrite(&reg, sizeof(Carrera), 1, pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}
+

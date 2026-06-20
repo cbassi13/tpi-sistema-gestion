@@ -23,11 +23,11 @@ void CarreraMenu::ejecutarOpcion(int opcion) {
         break;
 
     case 2:
-        /// _managerCarrera.modificarCarrera();
+        _managerCarrera.modificarCarrera();
         break;
 
     case 3:
-        /// _managerCarrera.bajaCarrera();
+        _managerCarrera.bajaCarrera();
         break;
 
     case 4:

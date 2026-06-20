@@ -9,6 +9,9 @@ public:
     void guardarInscripcion();
     void listarInscripciones();
 
+    void modificarInscripcion();
+    void bajaInscripcion();
+
 private:
     Inscripcion crearInscripcion();
     InscripcionArchivo _inscripcionArchivo;

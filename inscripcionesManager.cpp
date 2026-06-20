@@ -86,3 +86,60 @@ void InscripcionManager::listarInscripciones() {
              << endl;
     }
 }
+
+void InscripcionManager::modificarInscripcion(){
+
+    int id;
+
+    cout << "Ingrese ID de la inscripcion: ";
+    cin >> id;
+
+    int pos = _inscripcionArchivo.getPosByIdInscripcion(id);
+
+    if(pos == -1){
+        cout << "No existe una inscripcion con ese ID." << endl;
+        return;
+    }
+
+    Inscripcion reg = _inscripcionArchivo.leer(pos);
+
+    int nroMateria;
+
+    cout << "Nuevo numero de materia: ";
+    cin >> nroMateria;
+
+    reg.setNroMateria(nroMateria);
+
+    if(_inscripcionArchivo.modificar(reg, pos)){
+        cout << "Inscripcion modificada correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo modificar." << endl;
+    }
+}
+
+void InscripcionManager::bajaInscripcion(){
+
+    int id;
+
+    cout << "Ingrese ID de la inscripcion: ";
+    cin >> id;
+
+    int pos = _inscripcionArchivo.getPosByIdInscripcion(id);
+
+    if(pos == -1){
+        cout << "No existe una inscripcion con ese ID." << endl;
+        return;
+    }
+
+    Inscripcion reg = _inscripcionArchivo.leer(pos);
+
+    reg.setEstado(false);
+
+    if(_inscripcionArchivo.modificar(reg, pos)){
+        cout << "Inscripcion dada de baja correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo realizar la baja." << endl;
+    }
+}

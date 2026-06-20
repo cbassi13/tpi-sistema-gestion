@@ -12,6 +12,9 @@ public:
     int getCantidadRegistros();
     int getNuevoIdCarrera();
 
+    bool modificar(const Carrera &reg, int pos);
+    int getPosByIdCarrera(int idCarrera);
+
     /// int getPosByIdCarrera(int idCarrera);
 
 private:

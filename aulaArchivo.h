@@ -10,6 +10,9 @@ public:
     int getCantidadRegistros();
     int getNuevoId();
 
+    bool modificar(const Aula &reg, int pos);
+    int getPosByIdAula(int idAula);
+
 private:
     std::string _nombreArchivo;
 };

@@ -25,11 +25,11 @@ void InscripcionMenu::ejecutarOpcion(int opcion) {
         break;
 
     case 2:
-        /// _managerInscripcion.modificarInscripcion();
+        _managerInscripcion.modificarInscripcion();
         break;
 
     case 3:
-        /// _managerInscripcion.bajaInscripcion();
+        _managerInscripcion.bajaInscripcion();
         break;
 
     case 4:

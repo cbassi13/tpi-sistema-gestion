@@ -22,10 +22,10 @@ void AulaMenu::ejecutarOpcion(int opcion) {
         _managerAula.guardarAula();
         break;
     case 2:
-        /// _managerAula.modificarAula();
+        _managerAula.modificarAula();
         break;
     case 3:
-        /// _managerAula.bajaAula();
+        _managerAula.bajaAula();
         break;
     case 4:
         _managerAula.listarAulas();

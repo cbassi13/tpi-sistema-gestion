@@ -63,3 +63,38 @@ int InscripcionArchivo::getCantidadRegistros() {
 int InscripcionArchivo::getNuevoIdInscripcion() {
     return getCantidadRegistros() + 1;
 }
+
+int InscripcionArchivo::getPosByIdInscripcion(int idInscripcion){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Inscripcion reg = leer(i);
+
+        if(reg.getIdInscripcion() == idInscripcion){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+bool InscripcionArchivo::modificar(const Inscripcion &reg, int pos){
+
+    FILE *pFile;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(pFile == nullptr){
+        return false;
+    }
+
+    fseek(pFile, pos * sizeof(Inscripcion), SEEK_SET);
+
+    bool resultado = fwrite(&reg, sizeof(Inscripcion), 1, pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}

@@ -9,6 +9,9 @@ public:
     bool guardar(const Inscripcion &reg);
     Inscripcion leer(int pos);
 
+    bool modificar(const Inscripcion &reg, int pos);
+    int getPosByIdInscripcion(int idInscripcion);
+
     int getCantidadRegistros();
     int getNuevoIdInscripcion();
 

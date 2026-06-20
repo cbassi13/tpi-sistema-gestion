@@ -50,3 +50,62 @@ void CarreraManager::listarCarreras() {
         cout << "Nombre: " << c.getNombre() << endl;
     }
 }
+
+
+void CarreraManager::modificarCarrera(){
+
+    int id;
+
+    cout << "Ingrese ID de la carrera: ";
+    cin >> id;
+
+    int pos = _carreraArchivo.getPosByIdCarrera(id);
+
+    if(pos == -1){
+        cout << "No existe una carrera con ese ID." << endl;
+        return;
+    }
+
+    Carrera reg = _carreraArchivo.leer(pos);
+
+    string nombre;
+
+    cout << "Nuevo nombre: ";
+    cin.ignore();
+    getline(cin, nombre);
+
+    reg.setNombre(nombre);
+
+    if(_carreraArchivo.modificar(reg, pos)){
+        cout << "Carrera modificada correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo modificar." << endl;
+    }
+}
+
+void CarreraManager::bajaCarrera(){
+
+    int id;
+
+    cout << "Ingrese ID de la carrera: ";
+    cin >> id;
+
+    int pos = _carreraArchivo.getPosByIdCarrera(id);
+
+    if(pos == -1){
+        cout << "No existe una carrera con ese ID." << endl;
+        return;
+    }
+
+    Carrera reg = _carreraArchivo.leer(pos);
+
+    reg.setEliminado(true);
+
+    if(_carreraArchivo.modificar(reg, pos)){
+        cout << "Carrera dada de baja correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo realizar la baja." << endl;
+    }
+}
