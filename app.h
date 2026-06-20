@@ -3,6 +3,7 @@
 #include "alumnoMenu.h"
 #include "docenteMenu.h"
 #include "aulaMenu.h"
+#include"carreraMenu.h"
 
 class App: public Menu {
 public:
@@ -14,4 +15,6 @@ private:
     AlumnoMenu _alumnoMenu;
     DocenteMenu _docenteMenu;
     AulaMenu _aulaMenu;
+    CarreraMenu _carreraMenu;
+
 };
