@@ -11,7 +11,9 @@ void App::mostrarOpciones(){
    cout << "1- ALUMNOS"<<endl;
    cout << "2- DOCENTES "<<endl;
    cout << "3- AULAS" << endl;
-   cout << "6- BECAS" << endl;
+   cout << "6- MATERIAS" << endl;
+   cout << "7- CUOTAS" << endl;
+   cout << "8- BECAS" << endl;
    cout << "0- SALIR"<<endl;
    cout << "------------------------"<<endl;
 }
@@ -25,7 +27,14 @@ void App::ejecutarOpcion(int opcion){
             break;
         case 3:
             _aulaMenu.run();
+            break;
         case 6:
+            _materiaMenu.run();
+            break;
+        case 7:
+            _cuotaMenu.run();
+            break;
+        case 8:
             _becaMenu.run();
             break;
         case 0:
