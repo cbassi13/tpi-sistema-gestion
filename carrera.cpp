@@ -4,6 +4,7 @@
 Carrera::Carrera() {
     _idCarrera = 0;
     strcpy(_nombre, "");
+    _idJefeCatedra = 0;
     _eliminado = false;
 }
 
@@ -29,4 +30,13 @@ void Carrera::setEliminado(bool eliminado) {
 
 bool Carrera::getEliminado() const {
     return _eliminado;
+}
+
+void Carrera::setIdJefeCatedra(int idJefeCatedra) {
+    _idJefeCatedra = idJefeCatedra;
+}
+
+int Carrera::getIdJefeCatedra() const {
+    return _idJefeCatedra;
+
 }

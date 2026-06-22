@@ -12,6 +12,7 @@ CarreraManager::CarreraManager()
 Carrera CarreraManager::crearCarrera() {
     int idCarrera = _carreraArchivo.getNuevoIdCarrera();
     string nombre;
+    int idJefeCatedra;
 
     cout << "ID Carrera: #" << idCarrera << endl;
 
@@ -23,6 +24,10 @@ Carrera CarreraManager::crearCarrera() {
 
     carrera.setIdCarrera(idCarrera);
     carrera.setNombre(nombre);
+
+    cout << "Ingrese ID del jefe de catedra: ";
+    cin >> idJefeCatedra;
+    carrera.setIdJefeCatedra(idJefeCatedra);
 
     return carrera;
 }
@@ -48,6 +53,7 @@ void CarreraManager::listarCarreras() {
         cout << "-----------------------" << endl;
         cout << "ID Carrera: " << c.getIdCarrera() << endl;
         cout << "Nombre: " << c.getNombre() << endl;
+        cout << "Jefe de catedra ID: " << c.getIdJefeCatedra() << endl;
     }
 }
 
@@ -74,7 +80,13 @@ void CarreraManager::modificarCarrera(){
     cin.ignore();
     getline(cin, nombre);
 
+    int nuevoIdJefeCatedra;
+    cout << "(Consulte la lista de docentes para ver los IDs disponibles)" << endl;
+    cout << "Nuevo ID jefe de catedra: ";
+    cin >> nuevoIdJefeCatedra;
+
     reg.setNombre(nombre);
+    reg.setIdJefeCatedra(nuevoIdJefeCatedra);
 
     if(_carreraArchivo.modificar(reg, pos)){
         cout << "Carrera modificada correctamente." << endl;

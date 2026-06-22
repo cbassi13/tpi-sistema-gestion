@@ -25,7 +25,7 @@ void MateriaMenu::ejecutarOpcion(int opcion) {
         _managerMateria.modificarMateria();
         break;
     case 3:
-        /// _managerMateria.bajaMateria();
+        _managerMateria.bajaMateria();
         break;
     case 4:
         _managerMateria.listarMaterias();

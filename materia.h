@@ -12,7 +12,6 @@ public:
     void setNombre(std::string nombre);
     std::string getNombre() const;
 
-    // CAMBIADO
     void setIdDocente(int idDocente);
     int getIdDocente() const;
 
@@ -31,7 +30,7 @@ public:
 private:
     int _nroMateria;
     char _nombre[50];
-    int _idDocente;  // CAMBIADO
+    int _idDocente;
     int _cupo;
     int _idAula;
     int _idCarrera;

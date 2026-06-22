@@ -13,7 +13,7 @@ Materia MateriaManager::crearMateria() {
     int nroMateria = _materiaArchivo.getNuevoId();
 
     string nombre;
-    int idDocente; /// ID docente a cargo
+    int idDocente;
     int cupo;
     int idAula;
     int idCarrera;
