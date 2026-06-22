@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Fecha{
 public:
   Fecha();
@@ -14,7 +15,7 @@ public:
   int getMes() const;
   int getAnio() const;
 
-  void setCurrentDate(); // Método para cargar la fecha actual del sistema
+  void setCurrentDate(); // Mï¿½todo para cargar la fecha actual del sistema
 
 private:
     int _dia, _mes, _anio;

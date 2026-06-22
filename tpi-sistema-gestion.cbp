@@ -5,7 +5,7 @@
 		<Option title="tpi-sistema-gestion" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="modulos/persona/;modulos/persona/alumno/;modulos/persona/docente/;modulos/;utils/;modulos/aula/;modulos/carrera/;modulos/inscripciones/" />
+		<Option virtualFolders="modulos/persona/;modulos/persona/alumno/;modulos/persona/docente/;modulos/;utils/;modulos/aula/;modulos/carrera/;modulos/inscripciones/;modulos/beca/;modulos/cuota/;modulos/materia/" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/tpi-sistema-gestion" prefix_auto="1" extension_auto="1" />
@@ -86,6 +86,30 @@
 		<Unit filename="aulaMenu.h">
 			<Option virtualFolder="modulos/aula/" />
 		</Unit>
+		<Unit filename="beca.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="beca.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaArchivo.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaArchivo.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaManager.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaManager.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaMenu.cpp">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
+		<Unit filename="becaMenu.h">
+			<Option virtualFolder="modulos/beca/" />
+		</Unit>
 		<Unit filename="carrera.cpp">
 			<Option virtualFolder="modulos/carrera/" />
 		</Unit>
@@ -109,6 +133,30 @@
 		</Unit>
 		<Unit filename="carreraMenu.h">
 			<Option virtualFolder="modulos/carrera/" />
+		</Unit>
+		<Unit filename="cuota.cpp">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuota.h">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaArchivo.cpp">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaArchivo.h">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaManager.cpp">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaManager.h">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaMenu.cpp">
+			<Option virtualFolder="modulos/cuota/" />
+		</Unit>
+		<Unit filename="cuotaMenu.h">
+			<Option virtualFolder="modulos/cuota/" />
 		</Unit>
 		<Unit filename="docente.cpp">
 			<Option virtualFolder="modulos/persona/docente/" />
@@ -162,6 +210,30 @@
 			<Option virtualFolder="modulos/inscripciones/" />
 		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="materia.cpp">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materia.h">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaArchivo.cpp">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaArchivo.h">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaManager.cpp">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaManager.h">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaMenu.cpp">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
+		<Unit filename="materiaMenu.h">
+			<Option virtualFolder="modulos/materia/" />
+		</Unit>
 		<Unit filename="menu.cpp" />
 		<Unit filename="menu.h" />
 		<Unit filename="persona.cpp">

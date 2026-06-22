@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "fecha.h"
 
 class Aula {
 public:
