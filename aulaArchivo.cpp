@@ -34,3 +34,39 @@ int AulaArchivo::getCantidadRegistros() {
 int AulaArchivo::getNuevoId() {
     return getCantidadRegistros() + 1;
 }
+
+int AulaArchivo::getPosByIdAula(int idAula){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Aula reg = leer(i);
+
+        if(reg.getIdAula() == idAula){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+bool AulaArchivo::modificar(const Aula &reg, int pos){
+
+    FILE *pFile;
+
+    pFile = fopen(_nombreArchivo.c_str(), "rb+");
+
+    if(pFile == nullptr){
+        return false;
+    }
+
+    fseek(pFile, pos * sizeof(Aula), SEEK_SET);
+
+    bool resultado = fwrite(&reg, sizeof(Aula), 1, pFile);
+
+    fclose(pFile);
+
+    return resultado;
+}
+

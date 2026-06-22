@@ -59,3 +59,60 @@ void AulaManager::listarAulas() {
         cout << endl;
     }
 }
+
+void AulaManager::modificarAula(){
+
+    int id;
+
+    cout << "Ingrese ID del aula: ";
+    cin >> id;
+
+    int pos = _aulaArchivo.getPosByIdAula(id);
+
+    if(pos == -1){
+        cout << "No existe un aula con ese ID." << endl;
+        return;
+    }
+
+    Aula reg = _aulaArchivo.leer(pos);
+
+    int capacidad;
+
+    cout << "Nueva capacidad: ";
+    cin >> capacidad;
+
+    reg.setCapacidad(capacidad);
+
+    if(_aulaArchivo.modificar(reg, pos)){
+        cout << "Aula modificada correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo modificar." << endl;
+    }
+}
+
+void AulaManager::bajaAula(){
+
+    int id;
+
+    cout << "Ingrese ID del aula: ";
+    cin >> id;
+
+    int pos = _aulaArchivo.getPosByIdAula(id);
+
+    if(pos == -1){
+        cout << "No existe un aula con ese ID." << endl;
+        return;
+    }
+
+    Aula reg = _aulaArchivo.leer(pos);
+
+    reg.setEliminado(true);
+
+    if(_aulaArchivo.modificar(reg, pos)){
+        cout << "Aula dada de baja correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo realizar la baja." << endl;
+    }
+}

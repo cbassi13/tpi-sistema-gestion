@@ -7,6 +7,9 @@ public:
     void guardarAula();
     void listarAulas();
 
+    void modificarAula();
+    void bajaAula();
+
 private:
     Aula crearAula();
     AulaArchivo _aulaArchivo;
