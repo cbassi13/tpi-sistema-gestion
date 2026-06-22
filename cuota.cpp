@@ -63,3 +63,12 @@ bool Cuota::getPagada() const
     return _pagada;
 }
 
+void Cuota::setEliminado(bool eliminado)
+{
+    _pagada = eliminado;
+}
+
+bool Cuota::getEliminado() const
+{
+    return _eliminado;
+}

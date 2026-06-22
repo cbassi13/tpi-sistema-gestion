@@ -22,10 +22,14 @@ public:
     void setPagada(bool pagada);
     bool getPagada() const;
 
+    void setEliminado(bool eliminado);
+    bool getEliminado() const;
+
 private:
     int _nroCuota, _legajo;
     float _monto;
     Fecha _fechaPago;
     bool _pagada;
+    bool _eliminado;
 };
 

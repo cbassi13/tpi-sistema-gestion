@@ -1,6 +1,7 @@
 #include <iostream>
 #include "materia.h"
 #include "materiaManager.h"
+#include <string>
 
 using namespace std;
 
@@ -12,7 +13,7 @@ Materia MateriaManager::crearMateria() {
     int nroMateria = _materiaArchivo.getNuevoId();
 
     string nombre;
-    string docente;
+    int legajo; ///Legajo docente a cargo
     int cupo;
     int idAula;
     int idCarrera;
@@ -20,10 +21,11 @@ Materia MateriaManager::crearMateria() {
     cout << "ID de materia: #" << nroMateria << endl;
 
     cout << "Ingrese nombre: ";
-    cin >> nombre;
+    cin.ignore();
+    getline(cin, nombre);
 
-    cout << "Ingrese docente: ";
-    cin >> docente;
+    cout << "Ingrese legajo docente: ";
+    cin >> legajo;
 
     cout << "Ingrese cupo: ";
     cin >> cupo;
@@ -34,7 +36,7 @@ Materia MateriaManager::crearMateria() {
     cout << "Ingrese ID carrera: ";
     cin >> idCarrera;
 
-    Materia materia(nroMateria, nombre, docente, cupo, idAula, idCarrera);
+    Materia materia(nroMateria, nombre, legajo, cupo, idAula, idCarrera);
 
     return materia;
 }
@@ -58,7 +60,7 @@ void MateriaManager::listarMaterias() {
         cout << "-----------------------" << endl;
         cout << "Nro. Materia: #" << materia.getNroMateria() << endl;
         cout << "Nombre: " << materia.getNombre() << endl;
-        cout << "Docente: " << materia.getDocente() << endl;
+        cout << "Legajo Docente: " << materia.getLegajo() << endl;
         cout << "Cupo: " << materia.getCupo() << endl;
         cout << "ID Aula: " << materia.getIdAula() << endl;
         cout << "ID Carrera: " << materia.getIdCarrera() << endl;
@@ -78,16 +80,17 @@ void MateriaManager::modificarMateria() {
         if (materia.getNroMateria() == nro) {
 
             string nuevoNombre;
-            string nuevoDocente;
+            int nuevoLegajo;
             int nuevoCupo;
             int nuevoIdAula;
             int nuevoIdCarrera;
 
             cout << "Nuevo nombre: ";
-            cin >> nuevoNombre;
+            cin.ignore();
+            getline(cin, nuevoNombre);
 
             cout << "Nuevo docente: ";
-            cin >> nuevoDocente;
+            cin >> nuevoLegajo;
 
             cout << "Nuevo cupo: ";
             cin >> nuevoCupo;
@@ -99,7 +102,7 @@ void MateriaManager::modificarMateria() {
             cin >> nuevoIdCarrera;
 
             materia.setNombre(nuevoNombre);
-            materia.setDocente(nuevoDocente);
+            materia.setLegajo(nuevoLegajo);
             materia.setCupo(nuevoCupo);
             materia.setIdAula(nuevoIdAula);
             materia.setIdCarrera(nuevoIdCarrera);
@@ -115,4 +118,30 @@ void MateriaManager::modificarMateria() {
     }
 
     cout << "No se encontro la materia" << endl;
+}
+
+void MateriaManager::bajaMateria(){
+
+    int id;
+
+    cout << "Ingrese ID de la Materia: ";
+    cin >> id;
+
+    int pos = _materiaArchivo.getPosByIdMateria(id);
+
+    if(pos == -1){
+        cout << "No existe una materia con ese ID." << endl;
+        return;
+    }
+
+    Materia materia = _materiaArchivo.leer(pos);
+
+    materia.setEliminado(true);
+
+    if(_materiaArchivo.modificar(materia, pos)){
+        cout << "Materia dada de baja correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo realizar la baja." << endl;
+    }
 }

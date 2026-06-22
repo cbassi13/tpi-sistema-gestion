@@ -75,6 +75,7 @@ void CuotaManager::modificarCuota() {
 
             float nuevoMonto;
             int nuevoLegajo;
+            Fecha nuevaFecha;
 
             cout << "Nuevo legajo: ";
             cin >> nuevoLegajo;
@@ -82,8 +83,23 @@ void CuotaManager::modificarCuota() {
             cout << "Nuevo monto: ";
             cin >> nuevoMonto;
 
+            /// Cargar nueva fecha de pago
+            int dia, mes, anio;
+            cout << "Nueva fecha de pago" <<endl;
+            cout << "Dia: ";
+            cin >> dia;
+            cout << "Mes: ";
+            cin >> mes;
+            cout << "Anio: ";
+            cin >> anio;
+
+            nuevaFecha.setDia(dia);
+            nuevaFecha.setMes(mes);
+            nuevaFecha.setAnio(anio);
+
             cuota.setLegajo(nuevoLegajo);
             cuota.setMonto(nuevoMonto);
+            cuota.setFechaPago(nuevaFecha);
 
             if (_cuotaArchivo.modificar(cuota, i)) {
                 cout << "Cuota modificada correctamente" << endl;
@@ -96,4 +112,60 @@ void CuotaManager::modificarCuota() {
     }
 
     cout << "No se encontro la cuota" << endl;
+}
+
+///--------------------REGISTRAR EL PAGO CUOTA-----------------------
+
+void CuotaManager::pagoCuota(){
+
+    int id;
+
+    cout << "Ingrese Numero de la Cuota: ";
+    cin >> id;
+
+    int pos = _cuotaArchivo.getPosByIdCuota(id);
+
+    if(pos == -1){
+        cout << "No existe una cuota con ese Nro. ID." << endl;
+        return;
+    }
+
+    Cuota cuota = _cuotaArchivo.leer(pos);
+
+    cuota.setPagada(true);
+
+    if(_cuotaArchivo.modificar(cuota, pos)){
+        cout << "El pago se registró correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo registrar el pago." << endl;
+    }
+}
+
+///--------------------BAJA CUOTA-----------------------
+
+void CuotaManager::bajaCuota(){
+
+    int id;
+
+    cout << "Ingrese ID de la Cuota: ";
+    cin >> id;
+
+    int pos = _cuotaArchivo.getPosByIdCuota(id);
+
+    if(pos == -1){
+        cout << "No existe una cuota con ese ID." << endl;
+        return;
+    }
+
+    Cuota cuota = _cuotaArchivo.leer(pos);
+
+    cuota.setEliminado(true);
+
+    if(_cuotaArchivo.modificar(cuota, pos)){
+        cout << "Cuota dada de baja correctamente." << endl;
+    }
+    else{
+        cout << "No se pudo realizar la baja." << endl;
+    }
 }

@@ -4,7 +4,7 @@
 class Materia {
 public:
     Materia();
-    Materia(int nroMateria, std::string nombre, std::string docente, int cupo, int idAula, int idCarrera);
+    Materia(int nroMateria, std::string nombre, int legajo, int cupo, int idAula, int idCarrera);
 
     void setNroMateria(int nroMateria);
     int getNroMateria() const;
@@ -12,8 +12,8 @@ public:
     void setNombre(std::string nombre);
     std::string getNombre() const;
 
-    void setDocente(std::string docente);
-    std::string getDocente() const;
+    void setLegajo(int legajo);
+    int getLegajo() const;
 
     void setCupo(int cupo);
     int getCupo() const;
@@ -30,7 +30,7 @@ public:
 private:
     int _nroMateria;
     char _nombre[50];
-    char _docente[50];
+    int _legajo;
     int _cupo;
     int _idAula;
     int _idCarrera;

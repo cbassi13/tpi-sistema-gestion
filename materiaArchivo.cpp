@@ -45,3 +45,19 @@ int MateriaArchivo::getCantidadRegistros() {
 int MateriaArchivo::getNuevoId() {
     return getCantidadRegistros() + 1;
 }
+
+int MateriaArchivo::getPosByIdMateria(int idMateria){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Materia reg = leer(i);
+
+        if(reg.getNroMateria() == idMateria){
+            return i;
+        }
+    }
+
+    return -1;
+}

@@ -82,3 +82,15 @@ Fecha Beca::getFechaAsignacion() const
 
 }
 
+void Beca::setEliminado(bool eliminado)
+{
+    _eliminado = eliminado;
+}
+
+bool Beca::getEliminado() const
+{
+    return _eliminado;
+}
+
+
+

@@ -1,16 +1,16 @@
 #include "materia.h"
 #include <cstring>
 
-Materia::Materia():_nroMateria(0), _cupo(0), _idAula(0), _idCarrera(0), _eliminado(false), _nombre(""), _docente("")
+Materia::Materia():_nroMateria(0), _nombre(""), _legajo(0), _cupo(0), _idAula(0), _idCarrera(0), _eliminado(false)
 {
 }
 
-Materia::Materia(int nroMateria, std::string nombre, std::string docente, int cupo, int idAula, int idCarrera)
+Materia::Materia(int nroMateria, std::string nombre, int legajo, int cupo, int idAula, int idCarrera)
 : _eliminado(false)
 {
     setNroMateria(nroMateria);
     setNombre(nombre);
-    setDocente(docente);
+    setLegajo(legajo);
     setCupo(cupo);
     setIdAula(idAula);
     setIdCarrera(idCarrera);
@@ -24,7 +24,7 @@ int Materia::getNroMateria() const {
     return _nroMateria;
 }
 
-// ---------------- NOMBRE ----------------
+/// ---------------- NOMBRE ----------------
 
 void Materia::setNombre(std::string nombre)
 {
@@ -36,19 +36,19 @@ std::string Materia::getNombre() const
     return std::string(_nombre);
 }
 
-// ---------------- DOCENTE ----------------
+/// ---------------- LEGAJO DOCENTE A CARGO ----------------
 
-void Materia::setDocente(std::string docente)
+void Materia::setLegajo(int legajo)
 {
-    strcpy(_docente, docente.c_str());
+    _legajo = legajo;
 }
 
-std::string Materia::getDocente() const
+int Materia::getLegajo() const
 {
-    return std::string(_docente);
+    return _legajo;
 }
 
-// ---------------- CUPO ----------------
+/// ---------------- CUPO ----------------
 
 void Materia::setCupo(int cupo)
 {
@@ -60,7 +60,7 @@ int Materia::getCupo() const
     return _cupo;
 }
 
-// ---------------- ID AULA ----------------
+/// ---------------- ID AULA ----------------
 
 void Materia::setIdAula(int idAula)
 {
@@ -72,7 +72,7 @@ int Materia::getIdAula() const
     return _idAula;
 }
 
-// ---------------- ID CARRERA ----------------
+/// ---------------- ID CARRERA ----------------
 
 void Materia::setIdCarrera(int idCarrera)
 {
@@ -84,7 +84,7 @@ int Materia::getIdCarrera() const
     return _idCarrera;
 }
 
-// ---------------- ELIMINADO ----------------
+/// ---------------- ELIMINADO ----------------
 
 void Materia::setEliminado(bool eliminado)
 {

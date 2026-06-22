@@ -34,3 +34,30 @@ int BecaArchivo::getCantidadRegistros() {
 int BecaArchivo::getNuevoId() {
     return getCantidadRegistros() + 1;
 }
+
+int BecaArchivo::getPosByIdBeca(int idBeca){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Beca reg = leer(i);
+
+        if(reg.getIdBeca() == idBeca){
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+bool BecaArchivo::modificar(Beca beca, int pos) {
+    FILE *pFile = fopen(_nombreArchivo.c_str(), "rb+");
+    if (pFile == nullptr) return false;
+
+    fseek(pFile, pos * sizeof(Beca), SEEK_SET);
+    bool modifico = fwrite(&beca, sizeof(Beca), 1, pFile);
+
+    fclose(pFile);
+    return modifico;
+}

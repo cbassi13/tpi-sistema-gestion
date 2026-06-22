@@ -22,10 +22,10 @@ void BecaMenu::ejecutarOpcion(int opcion) {
         _managerBeca.guardarBeca();
         break;
     case 2:
-        /// _managerBeca.modificarBeca();
+        _managerBeca.modificarBeca();
         break;
     case 3:
-        /// _managerBeca.bajaBeca();
+        _managerBeca.bajaBeca();
         break;
     case 4:
         _managerBeca.listarBecas();

@@ -13,6 +13,8 @@ public:
 
     void modificarMateria();
 
+    void bajaMateria();
+
 
 private:
 

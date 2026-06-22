@@ -12,6 +12,7 @@ void CuotaMenu::mostrarOpciones() {
     cout << "2. Modificar Cuota" << endl;
     cout << "3. Baja Cuota" << endl;
     cout << "4. Listar Cuotas" << endl;
+    cout << "5. Registrar el pago de una cuota" << endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -25,10 +26,13 @@ void CuotaMenu::ejecutarOpcion(int opcion) {
         _managerCuota.modificarCuota();
         break;
     case 3:
-        /// _managerCuota.bajaCuota();
+        _managerCuota.bajaCuota();
         break;
     case 4:
         _managerCuota.listarCuotas();
+        break;
+    case 5:
+        _managerCuota.pagoCuota();
         break;
     case 0:
         cout << "Saliendo del menu!" << endl;

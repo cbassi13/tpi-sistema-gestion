@@ -6,6 +6,8 @@ public:
     BecaManager();
     void guardarBeca();
     void listarBecas();
+    void modificarBeca();
+    void bajaBeca();
 
 private:
     Beca crearBeca();

@@ -9,6 +9,7 @@ public:
     bool modificar(Cuota cuota, int pos);
     Cuota leer(int pos);
     int getCantidadRegistros();
+    int getPosByIdCuota(int idCuota);
     int getNuevoId();
 
 private:

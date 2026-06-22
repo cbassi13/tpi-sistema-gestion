@@ -9,6 +9,7 @@ public:
     bool modificar(Materia materia, int pos);
     Materia leer(int pos);
     int getCantidadRegistros();
+    int getPosByIdMateria(int idMateria);
     int getNuevoId();
 
 private:

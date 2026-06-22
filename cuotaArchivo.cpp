@@ -45,3 +45,19 @@ int CuotaArchivo::getCantidadRegistros() {
 int CuotaArchivo::getNuevoId() {
     return getCantidadRegistros() + 1;
 }
+
+int CuotaArchivo::getPosByIdCuota(int idCuota){
+
+    int cantidad = getCantidadRegistros();
+
+    for(int i = 0; i < cantidad; i++){
+
+        Cuota reg = leer(i);
+
+        if(reg.getNroCuota() == idCuota){
+            return i;
+        }
+    }
+
+    return -1;
+}
