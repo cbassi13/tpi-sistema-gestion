@@ -1,16 +1,16 @@
 #include "materia.h"
 #include <cstring>
 
-Materia::Materia():_nroMateria(0), _nombre(""), _legajo(0), _cupo(0), _idAula(0), _idCarrera(0), _eliminado(false)
+Materia::Materia():_nroMateria(0), _nombre(""), _idDocente(0), _cupo(0), _idAula(0), _idCarrera(0), _eliminado(false)
 {
 }
 
-Materia::Materia(int nroMateria, std::string nombre, int legajo, int cupo, int idAula, int idCarrera)
+Materia::Materia(int nroMateria, std::string nombre, int idDocente, int cupo, int idAula, int idCarrera)
 : _eliminado(false)
 {
     setNroMateria(nroMateria);
     setNombre(nombre);
-    setLegajo(legajo);
+    setIdDocente(idDocente);
     setCupo(cupo);
     setIdAula(idAula);
     setIdCarrera(idCarrera);
@@ -36,16 +36,16 @@ std::string Materia::getNombre() const
     return std::string(_nombre);
 }
 
-/// ---------------- LEGAJO DOCENTE A CARGO ----------------
+/// ---------------- ID DOCENTE A CARGO ----------------
 
-void Materia::setLegajo(int legajo)
+void Materia::setIdDocente(int idDocente)
 {
-    _legajo = legajo;
+    _idDocente = idDocente;
 }
 
-int Materia::getLegajo() const
+int Materia::getIdDocente() const
 {
-    return _legajo;
+    return _idDocente;
 }
 
 /// ---------------- CUPO ----------------

@@ -13,7 +13,7 @@ Materia MateriaManager::crearMateria() {
     int nroMateria = _materiaArchivo.getNuevoId();
 
     string nombre;
-    int legajo; ///Legajo docente a cargo
+    int idDocente; /// ID docente a cargo
     int cupo;
     int idAula;
     int idCarrera;
@@ -24,8 +24,8 @@ Materia MateriaManager::crearMateria() {
     cin.ignore();
     getline(cin, nombre);
 
-    cout << "Ingrese legajo docente: ";
-    cin >> legajo;
+    cout << "Ingrese ID docente: ";
+    cin >> idDocente;
 
     cout << "Ingrese cupo: ";
     cin >> cupo;
@@ -36,7 +36,7 @@ Materia MateriaManager::crearMateria() {
     cout << "Ingrese ID carrera: ";
     cin >> idCarrera;
 
-    Materia materia(nroMateria, nombre, legajo, cupo, idAula, idCarrera);
+    Materia materia(nroMateria, nombre, idDocente, cupo, idAula, idCarrera);
 
     return materia;
 }
@@ -60,7 +60,7 @@ void MateriaManager::listarMaterias() {
         cout << "-----------------------" << endl;
         cout << "Nro. Materia: #" << materia.getNroMateria() << endl;
         cout << "Nombre: " << materia.getNombre() << endl;
-        cout << "Legajo Docente: " << materia.getLegajo() << endl;
+        cout << "ID Docente: " << materia.getIdDocente() << endl;
         cout << "Cupo: " << materia.getCupo() << endl;
         cout << "ID Aula: " << materia.getIdAula() << endl;
         cout << "ID Carrera: " << materia.getIdCarrera() << endl;
@@ -80,7 +80,7 @@ void MateriaManager::modificarMateria() {
         if (materia.getNroMateria() == nro) {
 
             string nuevoNombre;
-            int nuevoLegajo;
+            int nuevoIdDocente;
             int nuevoCupo;
             int nuevoIdAula;
             int nuevoIdCarrera;
@@ -89,8 +89,8 @@ void MateriaManager::modificarMateria() {
             cin.ignore();
             getline(cin, nuevoNombre);
 
-            cout << "Nuevo docente: ";
-            cin >> nuevoLegajo;
+            cout << "Nuevo ID docente: ";
+            cin >> nuevoIdDocente;
 
             cout << "Nuevo cupo: ";
             cin >> nuevoCupo;
@@ -102,7 +102,7 @@ void MateriaManager::modificarMateria() {
             cin >> nuevoIdCarrera;
 
             materia.setNombre(nuevoNombre);
-            materia.setLegajo(nuevoLegajo);
+            materia.setIdDocente(nuevoIdDocente);
             materia.setCupo(nuevoCupo);
             materia.setIdAula(nuevoIdAula);
             materia.setIdCarrera(nuevoIdCarrera);
