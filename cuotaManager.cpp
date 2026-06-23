@@ -19,6 +19,10 @@ Cuota CuotaManager::crearCuota() {
     cout << "Ingrese legajo: ";
     cin >> legajo;
 
+    int mesCorrespondiente;
+    cout << "Ingrese mes correspondiente (1-12): ";
+    cin >> mesCorrespondiente;
+
     cout << "Ingrese monto: ";
     cin >> monto;
 
@@ -31,9 +35,12 @@ Cuota CuotaManager::crearCuota() {
    cout << "/";
    cin >> anio;
 
-   Fecha fechaNacimiento(dia, mes, anio); Fecha fechaPago;
+   cout << "Ingrese mes correspondiente (1-12): ";
+   cin >> mesCorrespondiente;
 
-    return Cuota(nroCuota, legajo, monto, fechaPago);
+   Fecha fechaPago(dia, mes, anio);
+
+    return Cuota(nroCuota, legajo, monto, fechaPago, mesCorrespondiente);
 }
 
 void CuotaManager::guardarCuota() {

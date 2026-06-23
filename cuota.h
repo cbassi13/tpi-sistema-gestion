@@ -5,7 +5,7 @@
 class Cuota {
 public:
     Cuota();
-    Cuota(int nroCuota, int legajo, float monto, Fecha fechaPago);
+    Cuota(int nroCuota, int legajo, float monto, Fecha fechaPago, int mesCorrespondiente);
 
     void setNroCuota(int nroCuota);
     int getNroCuota() const;
@@ -25,8 +25,11 @@ public:
     void setEliminado(bool eliminado);
     bool getEliminado() const;
 
+    void setMesCorrespondiente(int mes);
+    int getMesCorrespondiente() const;
+
 private:
-    int _nroCuota, _legajo;
+    int _nroCuota, _legajo, _mesCorrespondiente;
     float _monto;
     Fecha _fechaPago;
     bool _pagada;
