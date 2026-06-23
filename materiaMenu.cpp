@@ -14,6 +14,7 @@ void MateriaMenu::mostrarOpciones() {
     cout << "4. Listar Materias" << endl;
     cout << "5. Buscar Materia por numero" << endl;
     cout << "6. Buscar Materia por nombre" << endl;
+    cout << "7. Buscar Materia/s por docente" << endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -38,6 +39,8 @@ void MateriaMenu::ejecutarOpcion(int opcion) {
     case 6:
         _managerMateria.buscarMateriaPorNombre();
         break;
+    case 7:
+        _managerMateria.buscarPorDocente();
 
     case 0:
         cout << "Saliendo del menu!" << endl;

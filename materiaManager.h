@@ -17,6 +17,8 @@ public:
 
     void buscarMateriaPorNombre();
 
+    void buscarPorDocente();
+
     void bajaMateria();
 
 

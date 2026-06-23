@@ -207,3 +207,32 @@ void MateriaManager::buscarMateriaPorNumero() {
 
     cout << "No se encontro la materia." << endl;
 }
+
+/// BUSCAR POR DOCENTE ASIGNADO -------------
+
+void MateriaManager::buscarPorDocente() {
+    int idDocente;
+    cout << "Ingrese ID del docente: ";
+    cin >> idDocente;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getIdDocente() == idDocente) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            cout << "ID Carrera: " << m.getIdCarrera() << endl;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron materias para ese docente." << endl;
+    }
+}
