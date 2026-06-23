@@ -13,6 +13,8 @@ public:
 
     void modificarMateria();
 
+    void buscarMateriaPorNumero();
+
     void bajaMateria();
 
 

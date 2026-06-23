@@ -148,3 +148,30 @@ void MateriaManager::bajaMateria(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+/// BUSCAR MATERIA POR NUMERO ---------------------------
+
+void MateriaManager::buscarMateriaPorNumero() {
+    int nroMateria;
+    cout << "Ingrese numero de materia a buscar: ";
+    cin >> nroMateria;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (m.getEliminado() == false) {
+            if (m.getNroMateria() == nroMateria) {
+                cout << "-----------------------" << endl;
+                cout << "Numero de Materia: #" << m.getNroMateria() << endl;
+                cout << "Nombre: " << m.getNombre() << endl;
+                cout << "ID Docente: " << m.getIdDocente() << endl;
+                cout << "Cupo: " << m.getCupo() << endl;
+                cout << "ID Aula: " << m.getIdAula() << endl;
+                cout << "ID Carrera: " << m.getIdCarrera() << endl;
+                return;
+            }
+        }
+    }
+    }
