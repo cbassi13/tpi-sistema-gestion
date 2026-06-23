@@ -8,6 +8,7 @@ DocenteManager::DocenteManager()
     : _docenteArchivo() {
 
 }
+
 Docente DocenteManager::crearDocente() {
     int legajo = _docenteArchivo.getNuevoLegajo();
     string nombre, apellido, email, direccion, telefono;
@@ -202,5 +203,55 @@ void DocenteManager::buscarDocentePorLegajo() {
     }
 
     cout << "No se encontro un docente con ese legajo." << endl;
+}
+
+void DocenteManager::mostrarAgendaDocente() {
+    int legajo;
+    cout << "Ingrese legajo del docente: ";
+    cin >> legajo;
+
+    int cantidadDocentes = _docenteArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidadDocentes; i++) {
+        Docente d = _docenteArchivo.leer(i);
+
+        if (!d.getEliminado()) {
+            if (d.getLegajo() == legajo) {
+                cout << "=======================" << endl;
+                cout << "Docente: " << d.getNombre() << " " << d.getApellido() << endl;
+                cout << "Legajo: #" << d.getLegajo() << endl;
+                cout << "Materias a cargo (agenda):" << endl;
+
+                int cantidadMaterias = _materiaArchivo.getCantidadRegistros();
+                bool tieneMaterias = false;
+
+                for (int j = 0; j < cantidadMaterias; j++) {
+                    Materia m = _materiaArchivo.leer(j);
+
+                    if (!m.getEliminado()) {
+                        if (m.getIdDocente() == legajo) {
+                            cout << "  - Materia #" << m.getNroMateria()
+                                << " | " << m.getNombre()
+                                << " | Cupo: " << m.getCupo()
+                                << " | ID Aula: " << m.getIdAula() << endl;
+                            tieneMaterias = true;
+                        }
+                    }
+                }
+
+                if (tieneMaterias == false) {
+                    cout << "  Sin materias asignadas." << endl;
+                }
+
+                encontrado = true;
+                return;
+            }
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No se encontro un docente con ese legajo." << endl;
+    }
 }
 
