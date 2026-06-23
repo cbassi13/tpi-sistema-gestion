@@ -236,3 +236,32 @@ void MateriaManager::buscarPorDocente() {
         cout << "No se encontraron materias para ese docente." << endl;
     }
 }
+
+/// BUSCAR MATERIA/S POR ID CARRERA ----------------------
+
+void MateriaManager::buscarPorCarrera() {
+    int idCarrera;
+    cout << "Ingrese ID de la carrera: ";
+    cin >> idCarrera;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getIdCarrera() == idCarrera) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "ID Docente: " << m.getIdDocente() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron materias para esa carrera." << endl;
+    }
+}

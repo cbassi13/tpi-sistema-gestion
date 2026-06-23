@@ -41,7 +41,10 @@ void MateriaMenu::ejecutarOpcion(int opcion) {
         break;
     case 7:
         _managerMateria.buscarPorDocente();
-
+        break;
+    case 8:
+        _managerMateria.buscarPorCarrera();
+        break;
     case 0:
         cout << "Saliendo del menu!" << endl;
         break;
