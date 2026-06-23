@@ -13,6 +13,7 @@ void InscripcionMenu::mostrarOpciones() {
     cout << "2. Modificar Inscripcion" << endl;
     cout << "3. Baja Inscripcion" << endl;
     cout << "4. Listar Inscripciones" << endl;
+    cout << "5. Cantidad total de alumnos inscriptos" <<endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -35,6 +36,11 @@ void InscripcionMenu::ejecutarOpcion(int opcion) {
     case 4:
         _managerInscripcion.listarInscripciones();
         break;
+
+    case 5:
+        _managerInscripcion.listarCantidadTotalInscriptos();
+        break;
+
 
     case 0:
         cout << "Saliendo del menu!" << endl;

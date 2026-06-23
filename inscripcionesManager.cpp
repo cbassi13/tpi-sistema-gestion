@@ -45,7 +45,7 @@ Inscripcion InscripcionManager::crearInscripcion() {
         nroMateria,
         fechaInscripcion,
         importeMatricula,
-        true
+        false
     );
 }
 
@@ -155,3 +155,48 @@ void InscripcionManager::bajaInscripcion(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+///-----------LISTAR CANTIDAD TOTAL INSCRIPTOS---------------
+
+void InscripcionManager::listarCantidadTotalInscriptos(){
+
+    int cantidad = _inscripcionArchivo.getCantidadRegistros();
+
+    int totalAlumnos = 0;
+
+    for(int i = 0; i < cantidad; i++){
+
+        Inscripcion inscripcion = _inscripcionArchivo.leer(i);
+
+        if(!inscripcion.getEliminado()){
+
+            bool repetido = false;
+
+            for(int j = 0; j < i; j++){
+
+                Inscripcion anterior = _inscripcionArchivo.leer(j);
+
+                if(!anterior.getEliminado() &&
+                   anterior.getLegajoAlumno() == inscripcion.getLegajoAlumno()){
+
+                    repetido = true;
+                    break;
+                }
+            }
+
+            if(!repetido){
+                totalAlumnos++;
+            }
+        }
+    }
+
+    if(totalAlumnos > 0){
+        cout << "------------------------" << endl;
+        cout << "Cantidad total de alumnos inscriptos: "
+             << totalAlumnos << endl;
+    }
+    else{
+        cout << "No hay alumnos inscriptos." << endl;
+    }
+}
+

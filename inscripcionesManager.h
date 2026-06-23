@@ -12,6 +12,9 @@ public:
     void modificarInscripcion();
     void bajaInscripcion();
 
+    void listarCantidadTotalInscriptos();
+
+
 private:
     Inscripcion crearInscripcion();
     InscripcionArchivo _inscripcionArchivo;

@@ -183,8 +183,13 @@ void CuotaManager::bajaCuota(){
 
 void CuotaManager::listarPagosPorAlumno() {
 
-    int cantidad = _cuotaArchivo.getCantidadRegistros();
+    int legajo;
     bool encontrado = false;
+
+    cout << "Ingrese legajo del alumno: ";
+    cin >> legajo;
+
+    int cantidad = _cuotaArchivo.getCantidadRegistros();
 
     for(int i = 0; i < cantidad; i++) {
 
@@ -192,14 +197,13 @@ void CuotaManager::listarPagosPorAlumno() {
 
         if(cuota.getEliminado() == false) {
 
-            if(cuota.getPagada() == true) {
+            if(cuota.getPagada() == true && cuota.getLegajo() == legajo) {
 
                 cout << "-----------------------" << endl;
                 cout << "Legajo: " << cuota.getLegajo() << endl;
                 cout << "Nro. Cuota: #" << cuota.getNroCuota() << endl;
                 cout << "Monto: $" << cuota.getMonto() << endl;
-                cout << "Mes Correspondiente: "
-                     << cuota.getMesCorrespondiente() << endl;
+                cout << "Mes Correspondiente: " << cuota.getMesCorrespondiente() << endl;
 
                 cout << "Fecha de Pago: "
                      << cuota.getFechaPago().getDia() << "/"
