@@ -8,6 +8,7 @@ public:
     void listarDocentes();
     void modificarDocente();
     void bajaDocente();
+    void buscarDocentePorLegajo();
 
 private:
     Docente crearDocente();

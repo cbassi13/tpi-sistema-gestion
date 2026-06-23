@@ -174,6 +174,7 @@ void AlumnoManager::buscarAlumnoPorLegajo() {
   int legajo;
   cout << "Ingrese legajo a buscar: ";
   cin >> legajo;
+  // cin.ignore();
 
   int cantidad = _alumnoArchivo.getCantidadRegistros();
 

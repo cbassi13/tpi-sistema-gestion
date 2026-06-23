@@ -13,6 +13,7 @@ void DocenteMenu::mostrarOpciones() {
     cout << "2. Modificar Docente" << endl;
     cout << "3. Baja Docente" << endl;
     cout << "4. Listar Docentes" << endl;
+    cout << "5. Buscar Docente por legajo" << endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -31,6 +32,9 @@ void DocenteMenu::ejecutarOpcion(int opcion) {
     case 4:
         _docenteManager.listarDocentes();
         break;
+    case 5:
+          _docenteManager.buscarDocentePorLegajo();
+          break;
     case 0:
         cout << "Saliendo del menu!" << endl;
         break;
