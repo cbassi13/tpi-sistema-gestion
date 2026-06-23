@@ -9,7 +9,7 @@ public:
    void listarAlumnos();
    void modificarAlumno();
    void bajaAlumno();
-
+    void buscarAlumnoPorLegajo();
 
 private:
    Alumno crearAlumno();

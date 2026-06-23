@@ -7,15 +7,18 @@ using namespace std;
 AlumnoMenu::AlumnoMenu(){
 }
 
-void AlumnoMenu::mostrarOpciones(){ /// << este no....
+void AlumnoMenu::mostrarOpciones(){
    cout << "---------------------"<<endl;
-   cout << "1. Guardar Alumno" << endl;   cout << "2. Modificar Alumno" << endl;
+   cout << "1. Guardar Alumno" << endl;
+   cout << "2. Modificar Alumno" << endl;
    cout << "3. Baja Alumno" << endl;
-   cout << "4. Listar Alumnos" << endl;   cout << "0. Salir" << endl;
+   cout << "4. Listar Alumnos" << endl;
+   cout << "5. Buscar Alumno por Legajo" << endl;
+   cout << "0. Salir" << endl;
    cout << "---------------------"<<endl;
 }
 
-void AlumnoMenu::ejecutarOpcion(int opcion){ /// particular
+void AlumnoMenu::ejecutarOpcion(int opcion){
    switch(opcion){
    case 1:
       _alumnoManager.guardarAlumno();
@@ -28,6 +31,9 @@ void AlumnoMenu::ejecutarOpcion(int opcion){ /// particular
       break;
    case 4:
       _alumnoManager.listarAlumnos();
+      break;
+   case 5:
+      _alumnoManager.buscarAlumnoPorLegajo();
       break;
    case 0:
       cout << "Saliendo del menu!"<<endl;

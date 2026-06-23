@@ -169,3 +169,34 @@ void AlumnoManager::bajaAlumno() {
           cout << "No se pudo realizar la baja." << endl;
       }
   }
+
+void AlumnoManager::buscarAlumnoPorLegajo() {
+  int legajo;
+  cout << "Ingrese legajo a buscar: ";
+  cin >> legajo;
+
+  int cantidad = _alumnoArchivo.getCantidadRegistros();
+
+  for (int i = 0; i < cantidad; i++) {
+      Alumno a = _alumnoArchivo.leer(i);
+
+      if (!a.getEliminado()) {
+          if (a.getLegajo() == legajo) {
+              cout << "-----------------------" << endl;
+              cout << "Legajo: #" << a.getLegajo() << endl;
+              cout << "Nombre: " << a.getNombre() << " " << a.getApellido() << endl;
+              cout << "DNI: " << a.getDni() << endl;
+              cout << "Email: " << a.getEmail() << endl;
+              cout << "Telefono: " << a.getTelefono() << endl;
+              cout << "Direccion: " << a.getDireccion() << endl;
+              cout << "Fecha de nacimiento: "
+                   << a.getFechaNacimiento().getDia() << "/"
+                   << a.getFechaNacimiento().getMes() << "/"
+                   << a.getFechaNacimiento().getAnio() << endl;
+              return;
+          }
+      }
+  }
+
+  cout << "No se encontro un alumno con ese legajo." << endl;
+}
