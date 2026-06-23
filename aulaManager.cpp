@@ -88,7 +88,7 @@ void AulaManager::modificarAula(){
 
     int id;
 
-    cout << "Ingrese ID del aula: ";
+    cout << "Ingrese id del Aula: ";
     cin >> id;
 
     int pos = _aulaArchivo.getPosByIdAula(id);
@@ -99,13 +99,34 @@ void AulaManager::modificarAula(){
     }
 
     Aula reg = _aulaArchivo.leer(pos);
-
     int capacidad;
 
-    cout << "Nueva capacidad: ";
+    cout << "Nueva capacidad (" << reg.getCapacidad() << "): ";
     cin >> capacidad;
 
+    int tieneProyector;
+
+    cout << "Posee proyector? (" << reg.getProyector() << "): ";
+    cin >> tieneProyector;
+    while (tieneProyector != 1 && tieneProyector != 0) {
+    cout << "Opcion incorrecta, ingrese 1 o 0: ";
+    cin >> tieneProyector;
+   }
+
+   int tieneEquipos;
+
+    cout << "Posee equipos? (" << reg.getEquipos() << "): ";
+    cin >> tieneEquipos;
+    while (tieneEquipos != 1 && tieneEquipos != 0) {
+    cout << "Opcion incorrecta, ingrese 1 o 0: ";
+    cin >> tieneEquipos;
+   }
+
+
     reg.setCapacidad(capacidad);
+    reg.setEquipos(tieneEquipos);
+    reg.setProyector(tieneProyector);
+
 
     if(_aulaArchivo.modificar(reg, pos)){
         cout << "Aula modificada correctamente." << endl;
