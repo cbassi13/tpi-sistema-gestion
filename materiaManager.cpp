@@ -45,9 +45,9 @@ void MateriaManager::guardarMateria() {
     Materia materia = crearMateria();
 
     if (_materiaArchivo.guardar(materia)) {
-        cout << "Se guardo exitosamente" << endl;
+        cout << "Se guardo exitosamente." << endl;
     } else {
-        cout << "No se pudo guardar" << endl;
+        cout << "No se pudo guardar." << endl;
     }
 }
 
@@ -111,16 +111,16 @@ void MateriaManager::modificarMateria() {
             materia.setIdCarrera(nuevoIdCarrera);
 
             if (_materiaArchivo.modificar(materia, i)) {
-                cout << "Materia modificada correctamente" << endl;
+                cout << "Materia modificada correctamente." << endl;
             } else {
-                cout << "Error al modificar" << endl;
+                cout << "Error al modificar." << endl;
             }
 
             return;
         }
     }
 
-    cout << "No se encontro la materia" << endl;
+    cout << "No se encontro la materia." << endl;
 }
 
 void MateriaManager::bajaMateria(){
@@ -173,5 +173,37 @@ void MateriaManager::buscarMateriaPorNumero() {
                 return;
             }
         }
+        else
+        {
+            cout << "No se encontro ese numero de materia.";
+        }
     }
     }
+
+    /// BUSCAR MATERIA POR NOMBRE ---------------------------
+
+    void MateriaManager::buscarMateriaPorNombre() {
+    string nombre;
+    cout << "Ingrese nombre de la materia: ";
+    cin.ignore();
+    getline(cin, nombre);
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getNombre() == nombre) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "ID Docente: " << m.getIdDocente() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            cout << "ID Carrera: " << m.getIdCarrera() << endl;
+            return;
+        }
+    }
+
+    cout << "No se encontro la materia." << endl;
+}

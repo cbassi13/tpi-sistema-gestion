@@ -13,6 +13,7 @@ void MateriaMenu::mostrarOpciones() {
     cout << "3. Baja Materia" << endl;
     cout << "4. Listar Materias" << endl;
     cout << "5. Buscar Materia por numero" << endl;
+    cout << "6. Buscar Materia por nombre" << endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -33,6 +34,9 @@ void MateriaMenu::ejecutarOpcion(int opcion) {
         break;
     case 5:
         _managerMateria.buscarMateriaPorNumero();
+        break;
+    case 6:
+        _managerMateria.buscarMateriaPorNombre();
         break;
 
     case 0:

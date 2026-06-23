@@ -15,6 +15,8 @@ public:
 
     void buscarMateriaPorNumero();
 
+    void buscarMateriaPorNombre();
+
     void bajaMateria();
 
 
