@@ -23,10 +23,10 @@ void DocenteMenu::ejecutarOpcion(int opcion) {
         _docenteManager.guardarDocente();
         break;
     case 2:
-        /// _docenteManager.modificarDocente();
+        _docenteManager.modificarDocente();
         break;
     case 3:
-        /// _docenteManager.bajaDocente();
+        _docenteManager.bajaDocente();
         break;
     case 4:
         _docenteManager.listarDocentes();

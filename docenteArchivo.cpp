@@ -64,3 +64,34 @@ int DocenteArchivo::getCantidadRegistros(){
 int DocenteArchivo::getNuevoLegajo(){
     return getCantidadRegistros() + 1;
 }
+
+int DocenteArchivo::getPosByLegajo(int legajo) {
+      int cantidad = getCantidadRegistros();
+
+      for (int i = 0; i < cantidad; i++) {
+          Docente reg = leer(i);
+          if (reg.getLegajo() == legajo) {
+              return i;
+          }
+      }
+
+      return -1;
+  }
+
+  bool DocenteArchivo::modificar(const Docente &reg, int pos) {
+      FILE *pFile;
+
+      pFile = fopen(_nombreArchivo.c_str(), "rb+");
+
+      if (pFile == nullptr) {
+          return false;
+      }
+
+      fseek(pFile, pos * sizeof(Docente), SEEK_SET);
+
+      bool resultado = fwrite(&reg, sizeof(Docente), 1, pFile);
+
+      fclose(pFile);
+
+      return resultado;
+  }

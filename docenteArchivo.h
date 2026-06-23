@@ -12,7 +12,9 @@ public:
     int getCantidadRegistros();
     int getNuevoLegajo();
 
-    /// int getPosByLegajo(int legajo);
+
+  int getPosByLegajo(int legajo);
+  bool modificar(const Docente &reg, int pos);
 
 private:
     std::string _nombreArchivo;

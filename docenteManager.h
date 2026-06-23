@@ -6,6 +6,8 @@ public:
     DocenteManager();
     void guardarDocente();
     void listarDocentes();
+    void modificarDocente();
+    void bajaDocente();
 
 private:
     Docente crearDocente();
