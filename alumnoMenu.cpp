@@ -15,6 +15,7 @@ void AlumnoMenu::mostrarOpciones(){
    cout << "4. Listar Alumnos" << endl;
    cout << "5. Buscar Alumno por Legajo" << endl;
    cout << "6. Buscar Alumno por Apellido" << endl;
+   cout << "7. Listar Alumnos Deudores" << endl;
    cout << "0. Salir" << endl;
    cout << "---------------------"<<endl;
 }
@@ -38,6 +39,9 @@ void AlumnoMenu::ejecutarOpcion(int opcion){
       break;
    case 6:
       _alumnoManager.buscarAlumnoPorApellido();
+      break;
+   case 7:
+      _alumnoManager.listarAlumnosDeudores();
       break;
    case 0:
       cout << "Saliendo del menu!"<<endl;
