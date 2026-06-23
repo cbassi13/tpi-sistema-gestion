@@ -12,6 +12,7 @@ void AulaMenu::mostrarOpciones() {
     cout << "2. Modificar Aula" << endl;
     cout << "3. Baja Aula" << endl;
     cout << "4. Listar Aulas" << endl;
+    cout << "5. Listar aulas con proyector y equipos" << endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -30,6 +31,9 @@ void AulaMenu::ejecutarOpcion(int opcion) {
     case 4:
         _managerAula.listarAulas();
         break;
+    case 5:
+      _managerAula.listarAulasConProyectorYEquipos();
+      break;
     case 0:
         cout << "Saliendo del menu!" << endl;
         break;

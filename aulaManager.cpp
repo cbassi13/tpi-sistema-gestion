@@ -161,3 +161,28 @@ void AulaManager::bajaAula(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+void AulaManager::listarAulasConProyectorYEquipos() {
+    int cantidad = _aulaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Aula aula = _aulaArchivo.leer(i);
+
+        if (aula.getEliminado() == false) {
+            if (aula.getProyector() == true && aula.getEquipos() == true) {
+                cout << "-----------------------" << endl;
+                cout << "ID Aula: #" << aula.getIdAula() << endl;
+                cout << "Capacidad: " << aula.getCapacidad() << endl;
+                cout << "Proyector: SI" << endl;
+                cout << "Equipos: SI" << endl;
+                encontrado = true;
+            }
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No hay aulas con proyector y equipos." << endl;
+    }
+}
+

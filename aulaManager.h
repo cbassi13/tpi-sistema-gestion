@@ -4,11 +4,12 @@
 class AulaManager {
 public:
     AulaManager();
+
     void guardarAula();
     void listarAulas();
-
     void modificarAula();
     void bajaAula();
+    void listarAulasConProyectorYEquipos();
 
 private:
     Aula crearAula();
