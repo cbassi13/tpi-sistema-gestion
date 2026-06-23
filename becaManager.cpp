@@ -20,16 +20,17 @@ Beca BecaManager::crearBeca() {
     cout << "Ingrese legajo: ";
     cin >> legajo;
 
-    cout << "Ingrese el ID de la Carrera";
+    cout << "Ingrese el ID de la Carrera: ";
     cin >> idCarrera;
 
     cout << "Ingrese tipo: ";
-    cin >> tipo;
+    cin.ignore();
+    getline(cin, tipo);
 
     cout << "Ingrese porcentaje de la beca: ";
     cin >> porcentaje;
 
-    cout << "Ingrese fecha de asginacion";
+    cout << "Ingrese fecha de asignacion" << endl ;
     cout << "Ingrese dia: ";
     cin >> dia;
 
@@ -63,7 +64,12 @@ void BecaManager::listarBecas() {
             cout << "ID Beca: #" << beca.getIdBeca() << endl;
             cout << "Legajo: " << beca.getLegajo() << endl;
             cout << "Tipo: " <<beca.getTipo() << endl;
-            cout << "ID de la carrera: " <<beca.getIdCarrera() << endl;
+            cout << "ID de la carrera: " << beca.getIdCarrera() << endl;
+            cout << "Fecha de asignacion: "
+               << beca.getFechaAsignacion().getDia() << "/"
+               << beca.getFechaAsignacion().getMes() << "/"
+               << beca.getFechaAsignacion().getAnio() << endl;;
+            cout << "Porcentaje: " << beca.getPorcentaje() << "%" << endl;
 
             cout << endl;
         }
