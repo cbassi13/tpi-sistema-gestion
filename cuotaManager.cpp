@@ -26,17 +26,13 @@ Cuota CuotaManager::crearCuota() {
     cout << "Ingrese monto: ";
     cin >> monto;
 
-   cout << "Ingrese fecha de pago (Formato dd/mm/aaaa): ";
-   cin >> dia;
-
-   cout << "/";
-   cin >> mes;
-
-   cout << "/";
-   cin >> anio;
-
-   cout << "Ingrese mes correspondiente (1-12): ";
-   cin >> mesCorrespondiente;
+      cout << "Ingrese fecha de pago:" << endl;
+      cout << "Dia: ";
+      cin >> dia;
+      cout << "Mes: ";
+      cin >> mes;
+      cout << "Anio: ";
+      cin >> anio;
 
    Fecha fechaPago(dia, mes, anio);
 
@@ -53,22 +49,24 @@ void CuotaManager::guardarCuota() {
 }
 
 void CuotaManager::listarCuotas() {
-    int cantidad = _cuotaArchivo.getCantidadRegistros();
-    for(int i = 0; i < cantidad; i++) {
-        Cuota cuota = _cuotaArchivo.leer(i);
+  int cantidad = _cuotaArchivo.getCantidadRegistros();
 
-        if(!cuota.getEliminado()){
-            cout << "-----------------------" << endl;
-            cout << "Nro. de Cuota: #" << cuota.getNroCuota() << endl;
-            cout << "Legajo: " << cuota.getLegajo() << endl;
-            cout << "Monto: " << cuota.getMonto() << endl;
-            cout << "Fecha de pago: "
-            << cuota.getFechaPago().getDia() << "/"
-            << cuota.getFechaPago().getMes() << "/"
-            << cuota.getFechaPago().getAnio() << endl;
-        }
-    }
+  for(int i = 0; i < cantidad; i++) {
+      Cuota cuota = _cuotaArchivo.leer(i);
 
+      if (!cuota.getEliminado()) {
+          cout << "-----------------------" << endl;
+          cout << "Nro. de Cuota: #" << cuota.getNroCuota() << endl;
+          cout << "Legajo: " << cuota.getLegajo() << endl;
+          cout << "Monto: $" << cuota.getMonto() << endl;
+          cout << "Mes correspondiente: " << cuota.getMesCorrespondiente() << endl;
+          cout << "Fecha de pago: "
+               << cuota.getFechaPago().getDia() << "/"
+               << cuota.getFechaPago().getMes() << "/"
+               << cuota.getFechaPago().getAnio() << endl;
+          cout << "Pagada: " << (cuota.getPagada() ? "SI" : "NO") << endl;
+      }
+  }
 }
 
 void CuotaManager::modificarCuota() {
@@ -82,34 +80,35 @@ void CuotaManager::modificarCuota() {
         Cuota cuota = _cuotaArchivo.leer(i);
 
         if (cuota.getNroCuota() == nro) {
-
             float nuevoMonto;
-            int nuevoLegajo;
-            Fecha nuevaFecha;
+            int nuevoLegajo, nuevoMes, dia, mes, anio;
 
-            cout << "Nuevo legajo: ";
-            cin >> nuevoLegajo;
+              cout << "Nuevo legajo (" << cuota.getLegajo() << "): ";
+              cin >> nuevoLegajo;
 
-            cout << "Nuevo monto: ";
-            cin >> nuevoMonto;
+              cout << "Nuevo monto (" << cuota.getMonto() << "): ";
+              cin >> nuevoMonto;
 
-            /// Cargar nueva fecha de pago
-            int dia, mes, anio;
-            cout << "Nueva fecha de pago" <<endl;
-            cout << "Dia: ";
-            cin >> dia;
-            cout << "Mes: ";
-            cin >> mes;
-            cout << "Anio: ";
-            cin >> anio;
+              cout << "Nuevo mes correspondiente (" << cuota.getMesCorrespondiente() << "): ";
+              cin >> nuevoMes;
 
-            nuevaFecha.setDia(dia);
-            nuevaFecha.setMes(mes);
-            nuevaFecha.setAnio(anio);
+              cout << "Nueva fecha de pago ("
+                    << cuota.getFechaPago().getDia() << "/"
+                    << cuota.getFechaPago().getMes() << "/"
+                    << cuota.getFechaPago().getAnio() << "): " << endl;
+              cout << "Dia: ";
+              cin >> dia;
+              cout << "Mes: ";
+              cin >> mes;
+              cout << "Anio: ";
+              cin >> anio;
 
-            cuota.setLegajo(nuevoLegajo);
-            cuota.setMonto(nuevoMonto);
-            cuota.setFechaPago(nuevaFecha);
+              Fecha nuevaFecha(dia, mes, anio);
+
+              cuota.setLegajo(nuevoLegajo);
+              cuota.setMonto(nuevoMonto);
+              cuota.setMesCorrespondiente(nuevoMes);
+              cuota.setFechaPago(nuevaFecha);
 
             if (_cuotaArchivo.modificar(cuota, i)) {
                 cout << "Cuota modificada correctamente" << endl;
