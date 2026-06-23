@@ -21,10 +21,10 @@ void AlumnoMenu::ejecutarOpcion(int opcion){ /// particular
       _alumnoManager.guardarAlumno();
       break;
    case 2:
-      /// _alumnoManager.modificarAlumno();
+      _alumnoManager.modificarAlumno();
       break;
    case 3:
-      /// _alumnoManager.bajaAlumno();
+      _alumnoManager.bajaAlumno();
       break;
    case 4:
       _alumnoManager.listarAlumnos();

@@ -73,3 +73,69 @@ void AlumnoManager::listarAlumnos(){
            << a.getFechaNacimiento().getAnio() << endl;
    }
 }
+
+  void AlumnoManager::modificarAlumno() {
+      int legajo;
+      cout << "Ingrese legajo del alumno: ";
+      cin >> legajo;
+
+      int pos = _alumnoArchivo.getPosByLegajo(legajo);
+
+      if (pos == -1) {
+          cout << "No existe un alumno con ese legajo." << endl;
+          return;
+      }
+
+      Alumno reg = _alumnoArchivo.leer(pos);
+
+      string nombre, apellido, email, telefono, direccion;
+
+      cout << "Nuevo nombre (" << reg.getNombre() << "): ";
+      cin.ignore();
+      getline(cin, nombre);
+
+      cout << "Nuevo apellido (" << reg.getApellido() << "): ";
+      getline(cin, apellido);
+
+      cout << "Nuevo email (" << reg.getEmail() << "): ";
+      getline(cin, email);
+
+      cout << "Nuevo telefono (" << reg.getTelefono() << "): ";
+      getline(cin, telefono);
+
+      cout << "Nueva direccion (" << reg.getDireccion() << "): ";
+      getline(cin, direccion);
+
+      reg.setNombre(nombre);
+      reg.setApellido(apellido);
+      reg.setEmail(email);
+      reg.setTelefono(telefono);
+      reg.setDireccion(direccion);
+
+      if (_alumnoArchivo.modificar(reg, pos)) {
+          cout << "Alumno modificado correctamente." << endl;
+      } else {
+          cout << "No se pudo modificar." << endl;
+      }
+  }
+void AlumnoManager::bajaAlumno() {
+      int legajo;
+      cout << "Ingrese legajo del alumno: ";
+      cin >> legajo;
+
+      int pos = _alumnoArchivo.getPosByLegajo(legajo);
+
+      if (pos == -1) {
+          cout << "No existe un alumno con ese legajo." << endl;
+          return;
+      }
+
+      Alumno reg = _alumnoArchivo.leer(pos);
+      reg.setEliminado(true);
+
+      if (_alumnoArchivo.modificar(reg, pos)) {
+          cout << "Alumno dado de baja correctamente." << endl;
+      } else {
+          cout << "No se pudo realizar la baja." << endl;
+      }
+  }

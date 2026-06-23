@@ -7,6 +7,9 @@ public:
 
    void guardarAlumno();
    void listarAlumnos();
+   void modificarAlumno();
+   void bajaAlumno();
+
 
 private:
    Alumno crearAlumno();
