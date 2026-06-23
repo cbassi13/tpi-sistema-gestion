@@ -10,19 +10,39 @@ AulaManager::AulaManager()
 
 Aula AulaManager::crearAula() {
     int id = _aulaArchivo.getNuevoId();
-    int capacidad;
+    int capacidad, tieneProyector, tieneEquipos;
     bool proyector, equipos;
+
 
     cout << "ID de aula: #" << id << endl;
 
     cout << "Ingrese capacidad: ";
     cin >> capacidad;
 
-    cout << "Tiene proyector? (1=SI / 0=NO): ";
-    cin >> proyector;
 
-    cout << "Tiene equipos informaticos? (1=SI / 0=NO): ";
-    cin >> equipos;
+    cout << "Tiene proyector? (1=SI / 0=NO): ";
+    cin >> tieneProyector;
+    while (tieneProyector != 1 && tieneProyector != 0) {
+    cout << "Opcion incorrecta, ingrese 1 o 0: ";
+    cin >> tieneProyector;
+   }
+  if (tieneProyector == 1) {
+      proyector = true;
+  } else {
+      proyector = false;
+  }
+
+    cout << "Tiene equipos? (1=SI / 0=NO): ";
+    cin >> tieneEquipos;
+    while (tieneEquipos != 1 && tieneEquipos != 0) {
+    cout << "Opcion incorrecta, ingrese 1 o 0: ";
+    cin >> tieneEquipos;
+   }
+  if (tieneEquipos == 1) {
+      equipos = true;
+  } else {
+      equipos = false;
+  }
 
     return Aula(id, capacidad, proyector, equipos);
 }
