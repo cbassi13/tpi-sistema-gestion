@@ -178,3 +178,40 @@ void CuotaManager::bajaCuota(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+///-------------LISTAR PAGOS POR ALUMNO-------------------
+
+void CuotaManager::listarPagosPorAlumno() {
+
+    int cantidad = _cuotaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for(int i = 0; i < cantidad; i++) {
+
+        Cuota cuota = _cuotaArchivo.leer(i);
+
+        if(cuota.getEliminado() == false) {
+
+            if(cuota.getPagada() == true) {
+
+                cout << "-----------------------" << endl;
+                cout << "Legajo: " << cuota.getLegajo() << endl;
+                cout << "Nro. Cuota: #" << cuota.getNroCuota() << endl;
+                cout << "Monto: $" << cuota.getMonto() << endl;
+                cout << "Mes Correspondiente: "
+                     << cuota.getMesCorrespondiente() << endl;
+
+                cout << "Fecha de Pago: "
+                     << cuota.getFechaPago().getDia() << "/"
+                     << cuota.getFechaPago().getMes() << "/"
+                     << cuota.getFechaPago().getAnio() << endl;
+
+                encontrado = true;
+            }
+        }
+    }
+
+    if(encontrado == false) {
+        cout << "No hay pagos registrados." << endl;
+    }
+}

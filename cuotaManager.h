@@ -9,6 +9,8 @@ public:
     void modificarCuota();
     void bajaCuota();
     void pagoCuota();
+    void listarPagosPorAlumno();
+
 
 private:
     Cuota crearCuota();
