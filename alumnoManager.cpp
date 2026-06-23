@@ -200,3 +200,39 @@ void AlumnoManager::buscarAlumnoPorLegajo() {
 
   cout << "No se encontro un alumno con ese legajo." << endl;
 }
+
+void AlumnoManager::buscarAlumnoPorApellido() {
+    string apellido;
+    cout << "Ingrese apellido a buscar: ";
+    cin.ignore();
+    getline(cin, apellido);
+
+    int cantidad = _alumnoArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Alumno a = _alumnoArchivo.leer(i);
+
+        if (!a.getEliminado()) {
+            if (a.getApellido() == apellido) {
+                cout << "-----------------------" << endl;
+                cout << "Legajo: #" << a.getLegajo() << endl;
+                cout << "Nombre: " << a.getNombre() << " " << a.getApellido() << endl;
+                cout << "DNI: " << a.getDni() << endl;
+                cout << "Email: " << a.getEmail() << endl;
+                cout << "Telefono: " << a.getTelefono() << endl;
+                cout << "Direccion: " << a.getDireccion() << endl;
+                cout << "Fecha de nacimiento: "
+                    << a.getFechaNacimiento().getDia() << "/"
+                    << a.getFechaNacimiento().getMes() << "/"
+                    << a.getFechaNacimiento().getAnio() << endl;
+                encontrado = true;
+            }
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No se encontro un alumno con ese apellido." << endl;
+    }
+}
+

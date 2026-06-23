@@ -10,6 +10,7 @@ public:
    void modificarAlumno();
    void bajaAlumno();
     void buscarAlumnoPorLegajo();
+   void buscarAlumnoPorApellido();
 
 private:
    Alumno crearAlumno();
