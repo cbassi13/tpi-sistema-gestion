@@ -69,19 +69,22 @@ void DocenteManager::listarDocentes() {
         Docente d = _docenteArchivo.leer(i);
 
         if(!d.getEliminado()) {
-
-        cout << "-----------------------" << endl;
-        cout << "Legajo #" << d.getLegajo() << endl;
-        cout << "Nombre: " << d.getNombre() << " "
-             << d.getApellido() << endl;
-
-        cout << "Fecha de nacimiento: "
-             << d.getFechaNacimiento().getDia() << "/"
-             << d.getFechaNacimiento().getMes() << "/"
-             << d.getFechaNacimiento().getAnio() << endl;
-        }
+          cout << "-----------------------"<<endl;
+          cout << "Legajo #" << d.getLegajo() << endl;
+          cout << "Nombre: " << d.getNombre() << endl;
+          cout << "Apellido: " << d.getApellido() << endl;
+          cout << "DNI: " << d.getDni() << endl;
+          cout << "Email: " << d.getEmail() << endl;
+          cout << "Telefono: " << d.getTelefono() << endl;
+          cout << "Direccion: " << d.getDireccion() << endl;
+          cout << "Fecha de nacimiento: "
+               << d.getFechaNacimiento().getDia() << "/"
+               << d.getFechaNacimiento().getMes() << "/"
+               << d.getFechaNacimiento().getAnio() << endl;
+      }
     }
 }
+
 void DocenteManager::modificarDocente() {
       int legajo;
       cout << "Ingrese legajo del docente: ";
@@ -96,29 +99,50 @@ void DocenteManager::modificarDocente() {
 
       Docente reg = _docenteArchivo.leer(pos);
 
+      int dni, dia, mes, anio;
       string nombre, apellido, email, telefono, direccion;
+
+      cout << "Nuevo DNI (" << reg.getDni() << "): ";
+      cin >> dni;
 
       cout << "Nuevo nombre (" << reg.getNombre() << "): ";
       cin.ignore();
       getline(cin, nombre);
 
       cout << "Nuevo apellido (" << reg.getApellido() << "): ";
+      cin.ignore();
       getline(cin, apellido);
 
       cout << "Nuevo email (" << reg.getEmail() << "): ";
-      getline(cin, email);
+      cin >> email;
 
       cout << "Nuevo telefono (" << reg.getTelefono() << "): ";
-      getline(cin, telefono);
+      cin >> telefono;
 
       cout << "Nueva direccion (" << reg.getDireccion() << "): ";
+      cin.ignore();
       getline(cin, direccion);
 
+      cout << "Nueva fecha de nacimiento ("
+                << reg.getFechaNacimiento().getDia() << "/"
+                << reg.getFechaNacimiento().getMes() << "/"
+                << reg.getFechaNacimiento().getAnio() << "): " << endl;
+      cout << "Dia: ";
+      cin >> dia;
+      cout << "Mes: ";
+      cin >> mes;
+      cout << "Anio: ";
+      cin >> anio;
+
+      Fecha nuevaFecha(dia,mes,anio);
+
+      reg.setDni(dni);
       reg.setNombre(nombre);
       reg.setApellido(apellido);
       reg.setEmail(email);
       reg.setTelefono(telefono);
       reg.setDireccion(direccion);
+      reg.setFechaNacimiento(nuevaFecha);
 
       if (_docenteArchivo.modificar(reg, pos)) {
           cout << "Docente modificado correctamente." << endl;
