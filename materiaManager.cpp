@@ -57,6 +57,8 @@ void MateriaManager::listarMaterias() {
     for (int i = 0; i < cantidad; i++) {
         Materia materia = _materiaArchivo.leer(i);
 
+        if(!materia.getEliminado()) {
+
         cout << "-----------------------" << endl;
         cout << "Nro. Materia: #" << materia.getNroMateria() << endl;
         cout << "Nombre: " << materia.getNombre() << endl;
@@ -64,6 +66,7 @@ void MateriaManager::listarMaterias() {
         cout << "Cupo: " << materia.getCupo() << endl;
         cout << "ID Aula: " << materia.getIdAula() << endl;
         cout << "ID Carrera: " << materia.getIdCarrera() << endl;
+        }
     }
 }
 

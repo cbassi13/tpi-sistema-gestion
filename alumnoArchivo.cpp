@@ -2,7 +2,6 @@
 
 AlumnoArchivo::AlumnoArchivo(std::string nombreArchivo)
 :_nombreArchivo(nombreArchivo){
-
 }
 
 bool AlumnoArchivo::guardar(const Alumno &reg){
@@ -47,7 +46,7 @@ int AlumnoArchivo::getCantidadRegistros(){
    FILE *pFile;
    int cant;
 
-   pFile = fopen(_nombreArchivo.c_str(), "rb");
+    pFile = fopen(_nombreArchivo.c_str(), "rb");
 
    if(pFile == nullptr){
       return 0;
@@ -55,7 +54,7 @@ int AlumnoArchivo::getCantidadRegistros(){
 
    fseek(pFile, 0, SEEK_END);
 
-   cant = ftell(pFile) / sizeof (Alumno);
+   cant = ftell(pFile) / sizeof(Alumno);
 
    fclose(pFile);
 

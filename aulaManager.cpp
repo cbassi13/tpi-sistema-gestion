@@ -38,25 +38,29 @@ void AulaManager::guardarAula() {
 
 void AulaManager::listarAulas() {
     int cantidad = _aulaArchivo.getCantidadRegistros();
+
     for(int i = 0; i < cantidad; i++) {
         Aula aula = _aulaArchivo.leer(i);
-        cout << "-----------------------" << endl;
-        cout << "ID Aula: #" << aula.getIdAula() << endl;
-        cout << "Capacidad: " << aula.getCapacidad() << endl;
-        cout << "Proyector: ";
-        if(aula.getProyector()) {
-            cout << "SI";
-        } else {
-            cout << "NO";
+
+        if(!aula.getEliminado()){
+            cout << "-----------------------" << endl;
+            cout << "ID Aula: #" << aula.getIdAula() << endl;
+            cout << "Capacidad: " << aula.getCapacidad() << endl;
+            cout << "Proyector: ";
+            if(aula.getProyector()) {
+                cout << "SI";
+            } else {
+                cout << "NO";
+            }
+            cout << endl;
+            cout << "Equipos informaticos: ";
+            if(aula.getEquipos()) {
+                cout << "SI";
+            } else {
+                cout << "NO";
+            }
+            cout << endl;
         }
-        cout << endl;
-        cout << "Equipos informaticos: ";
-        if(aula.getEquipos()) {
-            cout << "SI";
-        } else {
-            cout << "NO";
-        }
-        cout << endl;
     }
 }
 

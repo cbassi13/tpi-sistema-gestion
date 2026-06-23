@@ -57,13 +57,16 @@ void BecaManager::listarBecas() {
     int cantidad = _becaArchivo.getCantidadRegistros();
     for(int i = 0; i < cantidad; i++) {
         Beca beca = _becaArchivo.leer(i);
-        cout << "-----------------------" << endl;
-        cout << "ID Beca: #" << beca.getIdBeca() << endl;
-        cout << "Legajo: " << beca.getLegajo() << endl;
-        cout << "Tipo: " <<beca.getTipo() << endl;
-        cout << "ID de la carrera: " <<beca.getIdCarrera() << endl;
 
-        cout << endl;
+        if(!beca.getEliminado()) {
+            cout << "-----------------------" << endl;
+            cout << "ID Beca: #" << beca.getIdBeca() << endl;
+            cout << "Legajo: " << beca.getLegajo() << endl;
+            cout << "Tipo: " <<beca.getTipo() << endl;
+            cout << "ID de la carrera: " <<beca.getIdCarrera() << endl;
+
+            cout << endl;
+        }
     }
 }
 

@@ -56,14 +56,17 @@ void CuotaManager::listarCuotas() {
     int cantidad = _cuotaArchivo.getCantidadRegistros();
     for(int i = 0; i < cantidad; i++) {
         Cuota cuota = _cuotaArchivo.leer(i);
-        cout << "-----------------------" << endl;
-        cout << "Nro. de Cuota: #" << cuota.getNroCuota() << endl;
-        cout << "Legajo: " << cuota.getLegajo() << endl;
-        cout << "Monto: " << cuota.getMonto() << endl;
-        cout << "Fecha de pago: "
-        << cuota.getFechaPago().getDia() << "/"
-        << cuota.getFechaPago().getMes() << "/"
-        << cuota.getFechaPago().getAnio() << endl;
+
+        if(!cuota.getEliminado()){
+            cout << "-----------------------" << endl;
+            cout << "Nro. de Cuota: #" << cuota.getNroCuota() << endl;
+            cout << "Legajo: " << cuota.getLegajo() << endl;
+            cout << "Monto: " << cuota.getMonto() << endl;
+            cout << "Fecha de pago: "
+            << cuota.getFechaPago().getDia() << "/"
+            << cuota.getFechaPago().getMes() << "/"
+            << cuota.getFechaPago().getAnio() << endl;
+        }
     }
 
 }

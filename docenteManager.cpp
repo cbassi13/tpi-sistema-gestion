@@ -68,6 +68,8 @@ void DocenteManager::listarDocentes() {
     for (int i = 0; i < cantidad; i++) {
         Docente d = _docenteArchivo.leer(i);
 
+        if(!d.getEliminado()) {
+
         cout << "-----------------------" << endl;
         cout << "Legajo #" << d.getLegajo() << endl;
         cout << "Nombre: " << d.getNombre() << " "
@@ -77,6 +79,7 @@ void DocenteManager::listarDocentes() {
              << d.getFechaNacimiento().getDia() << "/"
              << d.getFechaNacimiento().getMes() << "/"
              << d.getFechaNacimiento().getAnio() << endl;
+        }
     }
 }
 void DocenteManager::modificarDocente() {

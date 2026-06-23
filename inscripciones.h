@@ -11,7 +11,7 @@ public:
                 int nroMateria,
                 Fecha fechaInscripcion,
                 float importeMatricula,
-                bool estado);
+                bool eliminado);
 
     void setIdInscripcion(int idInscripcion);
     int getIdInscripcion() const;
@@ -28,8 +28,8 @@ public:
     void setImporteMatricula(float importe);
     float getImporteMatricula() const;
 
-    void setEstado(bool estado);
-    bool getEstado() const;
+    void setEliminado(bool eliminado);
+    bool getEliminado() const;
 
 private:
     int _idInscripcion;
@@ -37,5 +37,5 @@ private:
     int _nroMateria;
     Fecha _fechaInscripcion;
     float _importeMatricula;
-    bool _estado;
+    bool _eliminado;
 };

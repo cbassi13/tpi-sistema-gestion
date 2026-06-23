@@ -50,10 +50,12 @@ void CarreraManager::listarCarreras() {
 
         Carrera c = _carreraArchivo.leer(i);
 
-        cout << "-----------------------" << endl;
-        cout << "ID Carrera: " << c.getIdCarrera() << endl;
-        cout << "Nombre: " << c.getNombre() << endl;
-        cout << "Jefe de catedra ID: " << c.getIdJefeCatedra() << endl;
+        if(!c.getEliminado()) {
+            cout << "-----------------------" << endl;
+            cout << "ID Carrera: " << c.getIdCarrera() << endl;
+            cout << "Nombre: " << c.getNombre() << endl;
+            cout << "Jefe de catedra ID: " << c.getIdJefeCatedra() << endl;
+        }
     }
 }
 

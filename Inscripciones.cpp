@@ -5,7 +5,7 @@ Inscripcion::Inscripcion() {
     _legajoAlumno = 0;
     _nroMateria = 0;
     _importeMatricula = 0;
-    _estado = true;
+    _eliminado = false;
 }
 
 Inscripcion::Inscripcion(int idInscripcion,
@@ -13,13 +13,13 @@ Inscripcion::Inscripcion(int idInscripcion,
                          int nroMateria,
                          Fecha fechaInscripcion,
                          float importeMatricula,
-                         bool estado) {
+                         bool eliminado) {
     setIdInscripcion(idInscripcion);
     setLegajoAlumno(legajoAlumno);
     setNroMateria(nroMateria);
     setFechaInscripcion(fechaInscripcion);
     setImporteMatricula(importeMatricula);
-    setEstado(estado);
+    setEliminado(eliminado);
 }
 
 void Inscripcion::setIdInscripcion(int idInscripcion) {
@@ -63,10 +63,10 @@ float Inscripcion::getImporteMatricula() const {
     return _importeMatricula;
 }
 
-void Inscripcion::setEstado(bool estado) {
-    _estado = estado;
+void Inscripcion::setEliminado(bool eliminado) {
+    _eliminado = eliminado;
 }
 
-bool Inscripcion::getEstado() const {
-    return _estado;
+bool Inscripcion::getEliminado() const {
+    return _eliminado;
 }

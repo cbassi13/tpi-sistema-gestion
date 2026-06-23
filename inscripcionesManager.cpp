@@ -69,27 +69,26 @@ void InscripcionManager::listarInscripciones() {
 
         Inscripcion ins = _inscripcionArchivo.leer(i);
 
-        cout << "------------------------" << endl;
+        if(!ins.getEliminado()) {
 
-        cout << "ID: " << ins.getIdInscripcion() << endl;
+            cout << "------------------------" << endl;
 
-        cout << "Legajo Alumno: "
-             << ins.getLegajoAlumno() << endl;
+            cout << "ID: " << ins.getIdInscripcion() << endl;
 
-        cout << "Nro Materia: "
-             << ins.getNroMateria() << endl;
+            cout << "Legajo Alumno: "
+                 << ins.getLegajoAlumno() << endl;
 
-        cout << "Fecha: "
-             << ins.getFechaInscripcion().getDia() << "/"
-             << ins.getFechaInscripcion().getMes() << "/"
-             << ins.getFechaInscripcion().getAnio()
-             << endl;
+            cout << "Nro Materia: "
+                 << ins.getNroMateria() << endl;
 
-        cout << "Importe matricula: $" <<ins.getImporteMatricula() << endl;
+            cout << "Fecha: "
+                 << ins.getFechaInscripcion().getDia() << "/"
+                 << ins.getFechaInscripcion().getMes() << "/"
+                 << ins.getFechaInscripcion().getAnio()
+                 << endl;
 
-        cout << "Estado: "
-             << ins.getEstado()
-             << endl;
+            cout << "Importe matricula: $" <<ins.getImporteMatricula() << endl;
+        }
     }
 }
 
@@ -147,7 +146,7 @@ void InscripcionManager::bajaInscripcion(){
 
     Inscripcion reg = _inscripcionArchivo.leer(pos);
 
-    reg.setEstado(false);
+    reg.setEliminado(false);
 
     if(_inscripcionArchivo.modificar(reg, pos)){
         cout << "Inscripcion dada de baja correctamente." << endl;

@@ -64,13 +64,16 @@ void AlumnoManager::listarAlumnos(){
 
    for(int i=0; i<cantidad; i++){
       Alumno a = _alumnoArchivo.leer(i);
-      cout << "-----------------------"<<endl;
-      cout << "Legajo #" << a.getLegajo() << endl;
-      cout << "Nombre: " << a.getNombre() << endl;
-      cout << "Fecha de nacimiento: "
-           << a.getFechaNacimiento().getDia() << "/"
-           << a.getFechaNacimiento().getMes() << "/"
-           << a.getFechaNacimiento().getAnio() << endl;
+
+      if(!a.getEliminado()) {
+          cout << "-----------------------"<<endl;
+          cout << "Legajo #" << a.getLegajo() << endl;
+          cout << "Nombre: " << a.getNombre() << endl;
+          cout << "Fecha de nacimiento: "
+               << a.getFechaNacimiento().getDia() << "/"
+               << a.getFechaNacimiento().getMes() << "/"
+               << a.getFechaNacimiento().getAnio() << endl;
+      }
    }
 }
 
