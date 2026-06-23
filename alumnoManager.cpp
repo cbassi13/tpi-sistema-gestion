@@ -69,6 +69,11 @@ void AlumnoManager::listarAlumnos(){
           cout << "-----------------------"<<endl;
           cout << "Legajo #" << a.getLegajo() << endl;
           cout << "Nombre: " << a.getNombre() << endl;
+          cout << "Apellido: " << a.getApellido() << endl;
+          cout << "DNI: " << a.getDni() << endl;
+          cout << "Email: " << a.getEmail() << endl;
+          cout << "Telefono: " << a.getTelefono() << endl;
+          cout << "Direccion: " << a.getDireccion() << endl;
           cout << "Fecha de nacimiento: "
                << a.getFechaNacimiento().getDia() << "/"
                << a.getFechaNacimiento().getMes() << "/"
@@ -77,7 +82,7 @@ void AlumnoManager::listarAlumnos(){
    }
 }
 
-  void AlumnoManager::modificarAlumno() {
+void AlumnoManager::modificarAlumno() {
       int legajo;
       cout << "Ingrese legajo del alumno: ";
       cin >> legajo;
@@ -91,29 +96,50 @@ void AlumnoManager::listarAlumnos(){
 
       Alumno reg = _alumnoArchivo.leer(pos);
 
+      int dni, dia, mes, anio;
       string nombre, apellido, email, telefono, direccion;
+
+      cout << "Nuevo DNI (" << reg.getDni() << "): ";
+      cin >> dni;
 
       cout << "Nuevo nombre (" << reg.getNombre() << "): ";
       cin.ignore();
       getline(cin, nombre);
 
       cout << "Nuevo apellido (" << reg.getApellido() << "): ";
+      cin.ignore();
       getline(cin, apellido);
 
       cout << "Nuevo email (" << reg.getEmail() << "): ";
-      getline(cin, email);
+      cin >> email;
 
       cout << "Nuevo telefono (" << reg.getTelefono() << "): ";
-      getline(cin, telefono);
+      cin >> telefono;
 
       cout << "Nueva direccion (" << reg.getDireccion() << "): ";
+      cin.ignore();
       getline(cin, direccion);
 
+      cout << "Nueva fecha de nacimiento ("
+                << reg.getFechaNacimiento().getDia() << "/"
+                << reg.getFechaNacimiento().getMes() << "/"
+                << reg.getFechaNacimiento().getAnio() << "): " << endl;
+      cout << "Dia: ";
+      cin >> dia;
+      cout << "Mes: ";
+      cin >> mes;
+      cout << "Anio: ";
+      cin >> anio;
+
+      Fecha nuevaFecha(dia,mes,anio);
+
+      reg.setDni(dni);
       reg.setNombre(nombre);
       reg.setApellido(apellido);
       reg.setEmail(email);
       reg.setTelefono(telefono);
       reg.setDireccion(direccion);
+      reg.setFechaNacimiento(nuevaFecha);
 
       if (_alumnoArchivo.modificar(reg, pos)) {
           cout << "Alumno modificado correctamente." << endl;
@@ -121,6 +147,7 @@ void AlumnoManager::listarAlumnos(){
           cout << "No se pudo modificar." << endl;
       }
   }
+
 void AlumnoManager::bajaAlumno() {
       int legajo;
       cout << "Ingrese legajo del alumno: ";
