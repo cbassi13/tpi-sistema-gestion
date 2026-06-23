@@ -4,6 +4,7 @@ Inscripcion::Inscripcion() {
     _idInscripcion = 0;
     _legajoAlumno = 0;
     _nroMateria = 0;
+    _importeMatricula = 0;
     _estado = true;
 }
 
@@ -11,11 +12,13 @@ Inscripcion::Inscripcion(int idInscripcion,
                          int legajoAlumno,
                          int nroMateria,
                          Fecha fechaInscripcion,
+                         float importeMatricula,
                          bool estado) {
     setIdInscripcion(idInscripcion);
     setLegajoAlumno(legajoAlumno);
     setNroMateria(nroMateria);
     setFechaInscripcion(fechaInscripcion);
+    setImporteMatricula(importeMatricula);
     setEstado(estado);
 }
 
@@ -49,6 +52,15 @@ void Inscripcion::setFechaInscripcion(Fecha fechaInscripcion) {
 
 Fecha Inscripcion::getFechaInscripcion() const {
     return _fechaInscripcion;
+
+}
+
+void Inscripcion::setImporteMatricula(float importeMatricula) {
+    _importeMatricula = importeMatricula;
+}
+
+float Inscripcion::getImporteMatricula() const {
+    return _importeMatricula;
 }
 
 void Inscripcion::setEstado(bool estado) {

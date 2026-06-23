@@ -14,7 +14,7 @@ Inscripcion InscripcionManager::crearInscripcion() {
 
     int legajoAlumno;
     int nroMateria;
-
+    float importeMatricula;
     int dia, mes, anio;
 
     cout << "ID Inscripcion: #" << idInscripcion << endl;
@@ -34,6 +34,9 @@ Inscripcion InscripcionManager::crearInscripcion() {
     cout << "Ingrese anio de inscripcion: ";
     cin >> anio;
 
+    cout << "Ingrese importe de la matricula: ";
+    cin >> importeMatricula;
+
     Fecha fechaInscripcion(dia, mes, anio);
 
     return Inscripcion(
@@ -41,6 +44,7 @@ Inscripcion InscripcionManager::crearInscripcion() {
         legajoAlumno,
         nroMateria,
         fechaInscripcion,
+        importeMatricula,
         true
     );
 }
@@ -81,6 +85,8 @@ void InscripcionManager::listarInscripciones() {
              << ins.getFechaInscripcion().getAnio()
              << endl;
 
+        cout << "Importe matricula: $" <<ins.getImporteMatricula() << endl;
+
         cout << "Estado: "
              << ins.getEstado()
              << endl;
@@ -109,6 +115,13 @@ void InscripcionManager::modificarInscripcion(){
     cin >> nroMateria;
 
     reg.setNroMateria(nroMateria);
+
+    float nuevoImporte;
+
+    cout << "Nuevo importe de matricula: ";
+    cin >> nuevoImporte;
+
+    reg.setImporteMatricula(nuevoImporte);
 
     if(_inscripcionArchivo.modificar(reg, pos)){
         cout << "Inscripcion modificada correctamente." << endl;

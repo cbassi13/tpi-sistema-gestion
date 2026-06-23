@@ -10,6 +10,7 @@ public:
                 int legajoAlumno,
                 int nroMateria,
                 Fecha fechaInscripcion,
+                float importeMatricula,
                 bool estado);
 
     void setIdInscripcion(int idInscripcion);
@@ -24,6 +25,9 @@ public:
     void setFechaInscripcion(Fecha fechaInscripcion);
     Fecha getFechaInscripcion() const;
 
+    void setImporteMatricula(float importe);
+    float getImporteMatricula() const;
+
     void setEstado(bool estado);
     bool getEstado() const;
 
@@ -32,5 +36,6 @@ private:
     int _legajoAlumno;
     int _nroMateria;
     Fecha _fechaInscripcion;
+    float _importeMatricula;
     bool _estado;
 };
