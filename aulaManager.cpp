@@ -161,3 +161,121 @@ void AulaManager::bajaAula(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+void AulaManager::listarAulasConProyectorYEquipos() {
+    int cantidad = _aulaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Aula aula = _aulaArchivo.leer(i);
+
+        if (aula.getEliminado() == false) {
+            if (aula.getProyector() == true && aula.getEquipos() == true) {
+                cout << "-----------------------" << endl;
+                cout << "ID Aula: #" << aula.getIdAula() << endl;
+                cout << "Capacidad: " << aula.getCapacidad() << endl;
+                cout << "Proyector: SI" << endl;
+                cout << "Equipos: SI" << endl;
+                encontrado = true;
+            }
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No hay aulas con proyector y equipos." << endl;
+    }
+}
+
+void AulaManager::listarAulasOcupadasYDesocupadas() {
+    int cantidadAulas = _aulaArchivo.getCantidadRegistros();
+    int cantidadMaterias = _materiaArchivo.getCantidadRegistros();
+
+    cout << "=== OCUPADAS ===" << endl;
+    bool hayOcupadas = false;
+
+    for (int i = 0; i < cantidadAulas; i++) {
+        Aula aula = _aulaArchivo.leer(i);
+
+        if (aula.getEliminado() == false) {
+            bool ocupada = false;
+
+            for (int j = 0; j < cantidadMaterias; j++) {
+                Materia m = _materiaArchivo.leer(j);
+
+                if (m.getEliminado() == false) {
+                    if (m.getIdAula() == aula.getIdAula()) {
+                        ocupada = true;
+                    }
+                }
+            }
+
+            if (ocupada == true) {
+                cout << "-----------------------" << endl;
+                cout << "ID Aula: #" << aula.getIdAula() << endl;
+                cout << "Capacidad: " << aula.getCapacidad() << endl;
+                cout << "Proyector: ";
+                if (aula.getProyector() == true) {
+                    cout << "SI" << endl;
+                } else {
+                    cout << "NO" << endl;
+                }
+                cout << "Equipos: ";
+                if (aula.getEquipos() == true) {
+                    cout << "SI" << endl;
+                } else {
+                    cout << "NO" << endl;
+                }
+                hayOcupadas = true;
+            }
+        }
+    }
+
+    if (hayOcupadas == false) {
+        cout << "No hay aulas ocupadas." << endl;
+    }
+
+    cout << "=== DESOCUPADAS ===" << endl;
+    bool hayDesocupadas = false;
+
+    for (int i = 0; i < cantidadAulas; i++) {
+        Aula aula = _aulaArchivo.leer(i);
+
+        if (aula.getEliminado() == false) {
+            bool ocupada = false;
+
+            for (int j = 0; j < cantidadMaterias; j++) {
+                Materia m = _materiaArchivo.leer(j);
+
+                if (m.getEliminado() == false) {
+                    if (m.getIdAula() == aula.getIdAula()) {
+                        ocupada = true;
+                    }
+                }
+            }
+
+            if (ocupada == false) {
+                cout << "-----------------------" << endl;
+                cout << "ID Aula: #" << aula.getIdAula() << endl;
+                cout << "Capacidad: " << aula.getCapacidad() << endl;
+                cout << "Proyector: ";
+                if (aula.getProyector() == true) {
+                    cout << "SI" << endl;
+                } else {
+                    cout << "NO" << endl;
+                }
+                cout << "Equipos: ";
+                if (aula.getEquipos() == true) {
+                    cout << "SI" << endl;
+                } else {
+                    cout << "NO" << endl;
+                }
+                hayDesocupadas = true;
+            }
+        }
+    }
+
+    if (hayDesocupadas == false) {
+        cout << "No hay aulas desocupadas." << endl;
+    }
+}
+
