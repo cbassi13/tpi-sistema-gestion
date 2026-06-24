@@ -173,12 +173,11 @@ void MateriaManager::buscarMateriaPorNumero() {
                 return;
             }
         }
-        else
-        {
-            cout << "No se encontro ese numero de materia.";
-        }
+
     }
-    }
+    cout << "No se encontro ese numero de materia." << endl;
+}
+
 
     /// BUSCAR MATERIA POR NOMBRE ---------------------------
 

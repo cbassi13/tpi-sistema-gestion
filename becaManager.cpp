@@ -190,9 +190,13 @@ void BecaManager::buscarPorLegajo() {
                  << b.getFechaAsignacion().getAnio() << endl;
 
             encontrado = true;
-        }
-    }
-}
+          }
+      }
+
+      if (encontrado == false) {
+          cout << "No se encontro una beca para ese legajo." << endl;
+      }
+  }
 
 ///---------------BUSCAR POR TIPO---------------------
 
