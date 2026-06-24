@@ -169,3 +169,118 @@ void AlumnoManager::bajaAlumno() {
           cout << "No se pudo realizar la baja." << endl;
       }
   }
+
+void AlumnoManager::buscarAlumnoPorLegajo() {
+  int legajo;
+  cout << "Ingrese legajo a buscar: ";
+  cin >> legajo;
+  // cin.ignore();
+
+  int cantidad = _alumnoArchivo.getCantidadRegistros();
+
+  for (int i = 0; i < cantidad; i++) {
+      Alumno a = _alumnoArchivo.leer(i);
+
+      if (!a.getEliminado()) {
+          if (a.getLegajo() == legajo) {
+              cout << "-----------------------" << endl;
+              cout << "Legajo: #" << a.getLegajo() << endl;
+              cout << "Nombre: " << a.getNombre() << " " << a.getApellido() << endl;
+              cout << "DNI: " << a.getDni() << endl;
+              cout << "Email: " << a.getEmail() << endl;
+              cout << "Telefono: " << a.getTelefono() << endl;
+              cout << "Direccion: " << a.getDireccion() << endl;
+              cout << "Fecha de nacimiento: "
+                   << a.getFechaNacimiento().getDia() << "/"
+                   << a.getFechaNacimiento().getMes() << "/"
+                   << a.getFechaNacimiento().getAnio() << endl;
+              return;
+          }
+      }
+  }
+
+  cout << "No se encontro un alumno con ese legajo." << endl;
+}
+
+void AlumnoManager::buscarAlumnoPorApellido() {
+    string apellido;
+    cout << "Ingrese apellido a buscar: ";
+    cin.ignore();
+    getline(cin, apellido);
+
+    int cantidad = _alumnoArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Alumno a = _alumnoArchivo.leer(i);
+
+        if (!a.getEliminado()) {
+            if (a.getApellido() == apellido) {
+                cout << "-----------------------" << endl;
+                cout << "Legajo: #" << a.getLegajo() << endl;
+                cout << "Nombre: " << a.getNombre() << " " << a.getApellido() << endl;
+                cout << "DNI: " << a.getDni() << endl;
+                cout << "Email: " << a.getEmail() << endl;
+                cout << "Telefono: " << a.getTelefono() << endl;
+                cout << "Direccion: " << a.getDireccion() << endl;
+                cout << "Fecha de nacimiento: "
+                    << a.getFechaNacimiento().getDia() << "/"
+                    << a.getFechaNacimiento().getMes() << "/"
+                    << a.getFechaNacimiento().getAnio() << endl;
+                encontrado = true;
+            }
+        }
+    }
+
+    if (encontrado == false) {
+        cout << "No se encontro un alumno con ese apellido." << endl;
+    }
+}
+
+void AlumnoManager::listarAlumnosDeudores() {
+    int cantidadAlumnos = _alumnoArchivo.getCantidadRegistros();
+    int cantidadCuotas = _cuotaArchivo.getCantidadRegistros();
+    bool hayDeudores = false;
+
+    for (int i = 0; i < cantidadAlumnos; i++) {
+        Alumno a = _alumnoArchivo.leer(i);
+
+        if (a.getEliminado() == false) {
+            bool esDeudor = false;
+
+            for (int j = 0; j < cantidadCuotas; j++) {
+                Cuota c = _cuotaArchivo.leer(j);
+
+                if (c.getEliminado() == false) {
+                    if (c.getLegajo() == a.getLegajo() && c.getPagada() == false) {
+                        if (esDeudor == false) {
+                            cout << "=======================" << endl;
+                            cout << "Legajo: #" << a.getLegajo() << endl;
+                            cout << "Nombre: " << a.getNombre() << " " << a.getApellido() << endl;
+                            cout << "DNI: " << a.getDni() << endl;
+                            cout << "Email: " << a.getEmail() << endl;
+                            cout << "Telefono: " << a.getTelefono() << endl;
+                            cout << "Direccion: " << a.getDireccion() << endl;
+                            cout << "Fecha de nacimiento: "
+                                << a.getFechaNacimiento().getDia() << "/"
+                                << a.getFechaNacimiento().getMes() << "/"
+                                << a.getFechaNacimiento().getAnio() << endl;
+                            cout << "Cuotas impagas:" << endl;
+                            esDeudor = true;
+                            hayDeudores = true;
+                        }
+
+                        cout << "  - Cuota #" << c.getNroCuota()
+                            << " | Mes: " << c.getMesCorrespondiente()
+                            << " | Monto: $" << c.getMonto() << endl;
+                    }
+                }
+            }
+        }
+    }
+
+    if (hayDeudores == false) {
+        cout << "No hay alumnos deudores." << endl;
+    }
+}
+
