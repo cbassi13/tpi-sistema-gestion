@@ -12,6 +12,8 @@ void BecaMenu::mostrarOpciones() {
     cout << "2. Modificar Beca" << endl;
     cout << "3. Baja Beca" << endl;
     cout << "4. Listar Becas" << endl;
+    cout << "5. Buscar por Legajo" <<endl;
+    cout << "6. Buscar por Tipo" <<endl;
     cout << "0. Salir" << endl;
     cout << "---------------------" << endl;
 }
@@ -30,6 +32,12 @@ void BecaMenu::ejecutarOpcion(int opcion) {
     case 4:
         _managerBeca.listarBecas();
         break;
+    case 5:
+        _managerBeca.buscarPorLegajo();
+            break;
+    case 6:
+        _managerBeca.buscarPorTipo();
+            break;
     case 0:
         cout << "Saliendo del menu!" << endl;
         break;

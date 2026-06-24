@@ -8,6 +8,9 @@ public:
     void listarBecas();
     void modificarBeca();
     void bajaBeca();
+    void buscarPorLegajo();
+    void buscarPorTipo();
+
 
 private:
     Beca crearBeca();
