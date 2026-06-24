@@ -13,6 +13,14 @@ public:
 
     void modificarMateria();
 
+    void buscarMateriaPorNumero();
+
+    void buscarMateriaPorNombre();
+
+    void buscarPorDocente();
+
+    void buscarPorCarrera();
+
     void bajaMateria();
 
 

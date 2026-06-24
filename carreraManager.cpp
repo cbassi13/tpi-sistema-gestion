@@ -123,3 +123,57 @@ void CarreraManager::bajaCarrera(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+
+/// BUSCAR CARRERA POR ID -----------------
+
+void CarreraManager::buscarCarreraPorId() {
+    int idCarrera;
+    cout << "Ingrese ID de carrera a buscar: ";
+    cin >> idCarrera;
+
+    int cantidad = _carreraArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Carrera c = _carreraArchivo.leer(i);
+
+        if (c.getEliminado() == false) {
+            if (c.getIdCarrera() == idCarrera) {
+                cout << "-----------------------" << endl;
+                cout << "ID Carrera: #" << c.getIdCarrera() << endl;
+                cout << "Nombre: " << c.getNombre() << endl;
+                cout << "Jefe de catedra ID: " << c.getIdJefeCatedra() << endl;
+
+                return;
+            }
+        }
+    }
+
+    cout << "No se encontro una carrera con ese ID." << endl;
+}
+
+///BUSCAR CARRERA POR NOMBRE---------------------
+
+void CarreraManager::buscarCarreraPorNombre() {
+    string nombre;
+    cout << "Ingrese nombre de la carrera a buscar: ";
+    cin.ignore();
+    getline(cin, nombre);
+
+    int cantidad = _carreraArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Carrera c = _carreraArchivo.leer(i);
+
+        if (c.getEliminado() == false) {
+            if (c.getNombre() == nombre) {
+                cout << "-----------------------" << endl;
+                cout << "ID Carrera: #" << c.getIdCarrera() << endl;
+                cout << "Nombre: " << c.getNombre() << endl;
+                cout << "ID Jefe de Catedra: " << c.getIdJefeCatedra() << endl;
+                return;
+            }
+        }
+    }
+
+    cout << "No se encontro una carrera con ese nombre." << endl;
+}

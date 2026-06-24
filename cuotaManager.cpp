@@ -64,9 +64,14 @@ void CuotaManager::listarCuotas() {
                << cuota.getFechaPago().getDia() << "/"
                << cuota.getFechaPago().getMes() << "/"
                << cuota.getFechaPago().getAnio() << endl;
-          cout << "Pagada: " << (cuota.getPagada() ? "SI" : "NO") << endl;
-      }
-  }
+            cout << "Pagada: ";
+            if (cuota.getPagada() == true) {
+                cout << "SI" << endl;
+            } else {
+                cout << "NO" << endl;
+            }
+        }
+    }
 }
 
 void CuotaManager::modificarCuota() {
@@ -144,7 +149,7 @@ void CuotaManager::pagoCuota(){
     cuota.setPagada(true);
 
     if(_cuotaArchivo.modificar(cuota, pos)){
-        cout << "El pago se registró correctamente." << endl;
+        cout << "El pago se registrï¿½ correctamente." << endl;
     }
     else{
         cout << "No se pudo registrar el pago." << endl;

@@ -7,6 +7,8 @@ class CarreraManager {
 
     void guardarCarrera();
     void listarCarreras();
+    void buscarCarreraPorId();
+    void buscarCarreraPorNombre();
 
     void modificarCarrera();
     void bajaCarrera();
