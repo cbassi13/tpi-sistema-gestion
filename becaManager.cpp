@@ -165,3 +165,32 @@ void BecaManager::bajaBeca(){
         cout << "No se pudo realizar la baja." << endl;
     }
 }
+///---------------- BUSCAR POR LEGAJO-----------------
+void BecaManager::buscarPorLegajo() {
+    int legajo;
+    cout << "Ingrese legajo del alumno: ";
+    cin >> legajo;
+
+    int cantidad = _becaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Beca b = _becaArchivo.leer(i);
+
+        if (!b.getEliminado() && b.getLegajo() == legajo) {
+            cout << "------------------------" << endl;
+            cout << "ID Beca: #" << b.getIdBeca() << endl;
+            cout << "Legajo Alumno: " << b.getLegajo() << endl;
+            cout << "ID Carrera: " << b.getIdCarrera() << endl;
+            cout << "Tipo: " << b.getTipo() << endl;
+            cout << "Porcentaje: " << b.getPorcentaje() << "%" << endl;
+            cout << "Fecha Asignacion: "
+                 << b.getFechaAsignacion().getDia() << "/"
+                 << b.getFechaAsignacion().getMes() << "/"
+                 << b.getFechaAsignacion().getAnio() << endl;
+
+            encontrado = true;
+        }
+    }
+}
+
