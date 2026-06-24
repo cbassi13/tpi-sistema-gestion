@@ -9,6 +9,7 @@ public:
     void modificarBeca();
     void bajaBeca();
     void buscarPorLegajo();
+    void buscarPorTipo();
 
 
 private:
