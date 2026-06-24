@@ -146,7 +146,7 @@ void InscripcionManager::bajaInscripcion(){
 
     Inscripcion reg = _inscripcionArchivo.leer(pos);
 
-    reg.setEliminado(false);
+    reg.setEliminado(true);
 
     if(_inscripcionArchivo.modificar(reg, pos)){
         cout << "Inscripcion dada de baja correctamente." << endl;
@@ -176,13 +176,12 @@ void InscripcionManager::listarCantidadTotalInscriptos(){
 
                 Inscripcion anterior = _inscripcionArchivo.leer(j);
 
-                if(!anterior.getEliminado() &&
-                   anterior.getLegajoAlumno() == inscripcion.getLegajoAlumno()){
-
-                    repetido = true;
-                    break;
-                }
-            }
+               if(!anterior.getEliminado()) {
+               if(anterior.getLegajoAlumno() == inscripcion.getLegajoAlumno()){
+              repetido = true;
+          }
+      }
+  }
 
             if(!repetido){
                 totalAlumnos++;
