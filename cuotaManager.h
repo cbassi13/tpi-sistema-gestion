@@ -10,6 +10,7 @@ public:
     void bajaCuota();
     void pagoCuota();
     void listarPagosPorAlumno();
+    void calcularTotalAdeudado();
 
 
 private:

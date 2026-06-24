@@ -219,3 +219,20 @@ void CuotaManager::listarPagosPorAlumno() {
         cout << "No hay pagos registrados." << endl;
     }
 }
+///---------------CALCULAR TOTAL ADEUDADO---------------
+
+void CuotaManager::calcularTotalAdeudado() {
+    int cantidad = _cuotaArchivo.getCantidadRegistros();
+    float total = 0;
+
+    for (int i = 0; i < cantidad; i++) {
+        Cuota cuota = _cuotaArchivo.leer(i);
+
+        if (!cuota.getEliminado() && !cuota.getPagada()) {
+            total += cuota.getMonto();
+        }
+    }
+
+    cout << "-----------------------" << endl;
+    cout << "TOTAL ADEUDADO: $" << total << endl;
+}
