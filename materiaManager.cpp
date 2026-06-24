@@ -45,9 +45,9 @@ void MateriaManager::guardarMateria() {
     Materia materia = crearMateria();
 
     if (_materiaArchivo.guardar(materia)) {
-        cout << "Se guardo exitosamente" << endl;
+        cout << "Se guardo exitosamente." << endl;
     } else {
-        cout << "No se pudo guardar" << endl;
+        cout << "No se pudo guardar." << endl;
     }
 }
 
@@ -111,16 +111,16 @@ void MateriaManager::modificarMateria() {
             materia.setIdCarrera(nuevoIdCarrera);
 
             if (_materiaArchivo.modificar(materia, i)) {
-                cout << "Materia modificada correctamente" << endl;
+                cout << "Materia modificada correctamente." << endl;
             } else {
-                cout << "Error al modificar" << endl;
+                cout << "Error al modificar." << endl;
             }
 
             return;
         }
     }
 
-    cout << "No se encontro la materia" << endl;
+    cout << "No se encontro la materia." << endl;
 }
 
 void MateriaManager::bajaMateria(){
@@ -146,5 +146,122 @@ void MateriaManager::bajaMateria(){
     }
     else{
         cout << "No se pudo realizar la baja." << endl;
+    }
+}
+
+/// BUSCAR MATERIA POR NUMERO ---------------------------
+
+void MateriaManager::buscarMateriaPorNumero() {
+    int nroMateria;
+    cout << "Ingrese numero de materia a buscar: ";
+    cin >> nroMateria;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (m.getEliminado() == false) {
+            if (m.getNroMateria() == nroMateria) {
+                cout << "-----------------------" << endl;
+                cout << "Numero de Materia: #" << m.getNroMateria() << endl;
+                cout << "Nombre: " << m.getNombre() << endl;
+                cout << "ID Docente: " << m.getIdDocente() << endl;
+                cout << "Cupo: " << m.getCupo() << endl;
+                cout << "ID Aula: " << m.getIdAula() << endl;
+                cout << "ID Carrera: " << m.getIdCarrera() << endl;
+                return;
+            }
+        }
+        else
+        {
+            cout << "No se encontro ese numero de materia.";
+        }
+    }
+    }
+
+    /// BUSCAR MATERIA POR NOMBRE ---------------------------
+
+    void MateriaManager::buscarMateriaPorNombre() {
+    string nombre;
+    cout << "Ingrese nombre de la materia: ";
+    cin.ignore();
+    getline(cin, nombre);
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getNombre() == nombre) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "ID Docente: " << m.getIdDocente() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            cout << "ID Carrera: " << m.getIdCarrera() << endl;
+            return;
+        }
+    }
+
+    cout << "No se encontro la materia." << endl;
+}
+
+/// BUSCAR POR DOCENTE ASIGNADO -------------
+
+void MateriaManager::buscarPorDocente() {
+    int idDocente;
+    cout << "Ingrese ID del docente: ";
+    cin >> idDocente;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getIdDocente() == idDocente) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            cout << "ID Carrera: " << m.getIdCarrera() << endl;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron materias para ese docente." << endl;
+    }
+}
+
+/// BUSCAR MATERIA/S POR ID CARRERA ----------------------
+
+void MateriaManager::buscarPorCarrera() {
+    int idCarrera;
+    cout << "Ingrese ID de la carrera: ";
+    cin >> idCarrera;
+
+    int cantidad = _materiaArchivo.getCantidadRegistros();
+    bool encontrado = false;
+
+    for (int i = 0; i < cantidad; i++) {
+        Materia m = _materiaArchivo.leer(i);
+
+        if (!m.getEliminado() && m.getIdCarrera() == idCarrera) {
+            cout << "-----------------------" << endl;
+            cout << "Numero: #" << m.getNroMateria() << endl;
+            cout << "Nombre: " << m.getNombre() << endl;
+            cout << "ID Docente: " << m.getIdDocente() << endl;
+            cout << "Cupo: " << m.getCupo() << endl;
+            cout << "ID Aula: " << m.getIdAula() << endl;
+            encontrado = true;
+        }
+    }
+
+    if (!encontrado) {
+        cout << "No se encontraron materias para esa carrera." << endl;
     }
 }
